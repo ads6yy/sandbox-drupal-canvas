@@ -14,7 +14,7 @@ services:
       - drupal-canvas-data:/var/lib/mysql
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf:ro
     ports:
-      - "3701:3306"
+      - "3702:3306"
 
   php:
     build:
