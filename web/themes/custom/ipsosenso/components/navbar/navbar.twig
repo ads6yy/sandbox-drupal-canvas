@@ -1,0 +1,27 @@
+{% set menu_items = [
+  { 'label': 'Qui sommes-nous ?', 'href': '#about' },
+  { 'label': 'Nos expertises', 'href': '#expertises' },
+  { 'label': 'Nos références', 'href': '#references' },
+  { 'label': 'Nos chiffres', 'href': '#chiffres' },
+  { 'label': 'Contact', 'href': '#contact' },
+] %}
+
+<nav class="ipsosenso-navbar" data-ipsosenso-navbar>
+  <div class="ipsosenso-navbar__inner">
+    <a href="/" class="ipsosenso-navbar__logo" aria-label="Accueil">
+      <img src="/themes/custom/ipsosenso/logo.svg" alt="IpsoSenso" />
+    </a>
+
+    <ul class="ipsosenso-navbar__menu">
+      {% for item in menu_items %}
+        <li>
+          <a class="ipsosenso-navbar__link" href="{{ item.href }}">{{ item.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <a class="ipsosenso-navbar__cta" href="#acces">
+      Accès Client
+    </a>
+  </div>
+</nav>

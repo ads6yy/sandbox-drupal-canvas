@@ -1,5 +1,5 @@
 /**
- * Hero Carousel — rotation auto des slides avec indicateurs et flèches.
+ * Hero Carousel — rotation auto avec flèches et dots.
  */
 
 const initCarousel = (root) => {
@@ -18,20 +18,18 @@ const initCarousel = (root) => {
     const normalized = ((index % slides.length) + slides.length) % slides.length;
     slides.forEach((slide, i) => {
       if (i === normalized) {
-        slide.classList.add('opacity-100', 'relative');
-        slide.classList.remove('opacity-0', 'absolute', 'inset-0');
+        slide.classList.add('ipsosenso-hero-carousel__slide--active');
+        slide.classList.remove('ipsosenso-hero-carousel__slide--inactive');
       } else {
-        slide.classList.remove('opacity-100', 'relative');
-        slide.classList.add('opacity-0', 'absolute', 'inset-0');
+        slide.classList.remove('ipsosenso-hero-carousel__slide--active');
+        slide.classList.add('ipsosenso-hero-carousel__slide--inactive');
       }
     });
     dots.forEach((dot, i) => {
       if (i === normalized) {
-        dot.classList.add('bg-white', 'w-8');
-        dot.classList.remove('bg-transparent', 'w-3');
+        dot.classList.add('ipsosenso-hero-carousel__dot--active');
       } else {
-        dot.classList.remove('bg-white', 'w-8');
-        dot.classList.add('bg-transparent', 'w-3');
+        dot.classList.remove('ipsosenso-hero-carousel__dot--active');
       }
     });
     current = normalized;
@@ -44,21 +42,13 @@ const initCarousel = (root) => {
     stop();
     timer = setInterval(next, autoplay);
   };
-
   const stop = () => {
-    if (timer) {
-      clearInterval(timer);
-      timer = null;
-    }
+    if (timer) { clearInterval(timer); timer = null; }
   };
 
   dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      show(i);
-      start();
-    });
+    dot.addEventListener('click', () => { show(i); start(); });
   });
-
   if (prevBtn) prevBtn.addEventListener('click', () => { prev(); start(); });
   if (nextBtn) nextBtn.addEventListener('click', () => { next(); start(); });
 

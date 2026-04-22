@@ -34,10 +34,8 @@
   --ipso-green-bright: #4edd4a;
   --ipso-green-soft: #cfe345;
   --ipso-yellow: #e1ff80;
-  --ipso-dark-overlay: rgba(29, 37, 42, 0.7);
 }
 
-/* Import Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;800;900&display=swap');
 
 body {
@@ -45,7 +43,7 @@ body {
 }
 
 /* =============================================================
-   STRATE — section pleine largeur pleine hauteur 100vh
+   STRATE — section pleine largeur
    ============================================================= */
 
 .ipsosenso-strate {
@@ -57,35 +55,53 @@ body {
   padding: 100px 0;
 }
 
+.ipsosenso-strate > * {
+  position: relative;
+}
+
 .ipsosenso-strate__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background-size: cover !important;
   background-position: 50% 50% !important;
   background-repeat: no-repeat !important;
+  pointer-events: none;
 }
 
-/* Variante verte : expertises (équiv. strate01) */
+.ipsosenso-strate__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ipsosenso-strate__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Variante verte : fond photo verte */
 .ipsosenso-strate--green-photo {
   background-color: var(--ipso-green-alt);
   color: #fff;
 }
 .ipsosenso-strate--green-photo .ipsosenso-strate__bg {
   background-image: url('/themes/custom/ipsosenso/assets/0022.png');
-  opacity: 1;
 }
 .ipsosenso-strate--green-photo .ipsosenso-strate__overlay {
-  background-color: rgba(97, 185, 77, 0.5);
+  background-color: rgba(97, 185, 77, 0.55);
 }
-.ipsosenso-strate--green-photo,
-.ipsosenso-strate--green-photo h1,
-.ipsosenso-strate--green-photo h2,
-.ipsosenso-strate--green-photo h3,
-.ipsosenso-strate--green-photo h4,
-.ipsosenso-strate--green-photo p,
-.ipsosenso-strate--green-photo li {
-  color: #ffffff !important;
+/* Texte blanc dans la strate verte MAIS PAS dans les cards (qui ont leur propre background blanc) */
+.ipsosenso-strate--green-photo .ipsosenso-strate__content > * {
+  color: #fff;
+}
+.ipsosenso-strate--green-photo .ipsosenso-section-title__heading,
+.ipsosenso-strate--green-photo > .ipsosenso-strate__content > p {
+  color: #fff !important;
 }
 
-/* Variante light-texture : fond clair avec texture SVG (strate02, strate03) */
+/* Variante light-texture : fond clair */
 .ipsosenso-strate--light-texture {
   background-color: #f8f9fa;
   color: #303538;
@@ -95,19 +111,19 @@ body {
   opacity: 0.2;
   right: -10%;
   width: 90%;
+  left: auto;
 }
 
-/* Variante dark-photo : image sombre (strate04 chiffres) */
+/* Variante dark-photo : image sombre (chiffres) */
 .ipsosenso-strate--dark-photo {
   background-color: #f8f9fa;
-  color: #303538;
+  color: #fff;
 }
 .ipsosenso-strate--dark-photo .ipsosenso-strate__bg {
   background-image: url('/themes/custom/ipsosenso/assets/0011.png');
-  opacity: 1;
 }
 .ipsosenso-strate--dark-photo .ipsosenso-strate__overlay {
-  background-color: rgba(20, 30, 110, 0.55);
+  background-color: rgba(20, 30, 110, 0.6);
 }
 .ipsosenso-strate--dark-photo,
 .ipsosenso-strate--dark-photo h1,
@@ -118,7 +134,7 @@ body {
   color: #ffffff !important;
 }
 
-/* Variante clean : fond blanc */
+/* Variante clean */
 .ipsosenso-strate--clean {
   background-color: #ffffff;
 }
@@ -127,13 +143,12 @@ body {
   display: none;
 }
 
-/* Paddings spécifiques — override minimum 100vh si demandé */
 .ipsosenso-strate--padding-normal { padding: 60px 0; min-height: auto; }
 .ipsosenso-strate--padding-large { padding: 100px 0; }
 .ipsosenso-strate--padding-xlarge { padding: 120px 0; }
 
 /* =============================================================
-   SECTION TITLE — titre de section avec barre décorative
+   SECTION TITLE
    ============================================================= */
 
 .ipsosenso-section-title {
@@ -151,7 +166,7 @@ body {
   font-weight: 700;
   line-height: 1.2;
   padding-bottom: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   position: relative;
 }
 
@@ -162,13 +177,11 @@ body {
 }
 
 .ipsosenso-section-title__accent {
-  position: relative;
   display: block;
   height: 6px;
   width: 100px;
   border-radius: 20px;
   margin: 0 auto;
-  bottom: 0;
 }
 
 .ipsosenso-section-title__accent--green { background: var(--ipso-green); }
@@ -185,37 +198,41 @@ body {
 }
 
 /* =============================================================
-   HERO CAROUSEL — vidéo fixed + slides centrés + titre énorme
+   HERO CAROUSEL
    ============================================================= */
 
 .ipsosenso-hero {
   position: relative;
   min-height: 85vh;
   max-height: 960px;
+  height: 85vh;
   overflow: hidden;
   background-color: #141e6e;
 }
 
 .ipsosenso-hero__video {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
   filter: saturate(1.1);
 }
 
 .ipsosenso-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background: rgba(29, 37, 42, 0.55);
 }
 
-.ipsosenso-hero__slide-bg {
-  background: rgba(29, 37, 42, 0.7);
+.ipsosenso-hero__content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
 }
 
 .ipsosenso-hero-carousel {
@@ -223,23 +240,44 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-height: 960px;
+  height: 100%;
   min-height: 85vh;
+  max-height: 960px;
   margin: 0 auto;
   width: 100%;
-  max-width: 100%;
   padding: 120px 60px 60px;
   text-align: center;
+  color: #fff;
+}
+
+.ipsosenso-hero-carousel__slides {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ipsosenso-hero-carousel__slide {
   width: 100%;
   text-align: center;
-  color: #fff;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.ipsosenso-hero-carousel__slide--inactive {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.ipsosenso-hero-carousel__slide--active {
+  position: relative;
+  opacity: 1;
 }
 
 .ipsosenso-hero-carousel__slide h2 {
-  font-size: 6.875rem; /* 110px desktop */
+  font-size: 6.875rem;
   font-weight: 800;
   text-transform: uppercase;
   margin: 0 0 30px;
@@ -253,7 +291,7 @@ body {
 }
 
 .ipsosenso-hero-carousel__slide p {
-  font-size: 1.25rem; /* 20px desktop */
+  font-size: 1.25rem;
   line-height: 2.5rem;
   font-weight: 300;
   letter-spacing: 0.03rem;
@@ -263,24 +301,86 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .ipsosenso-hero-carousel__slide h2 {
-    font-size: 2.625rem; /* 42px mobile */
-  }
-  .ipsosenso-hero-carousel__slide p {
-    font-size: 1rem;
-    line-height: 1.75rem;
-  }
+  .ipsosenso-hero-carousel__slide h2 { font-size: 2.625rem; }
+  .ipsosenso-hero-carousel__slide p { font-size: 1rem; line-height: 1.75rem; }
+  .ipsosenso-hero-carousel { padding: 80px 20px 40px; }
+}
+
+.ipsosenso-hero-carousel__pagination {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 3rem;
+  justify-content: center;
 }
 
 .ipsosenso-hero-carousel__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: 1px solid #fff;
+  background: transparent;
+  cursor: pointer;
   transition: all 0.3s ease;
+  padding: 0;
+}
+.ipsosenso-hero-carousel__dot--active {
+  background: #fff;
+  width: 32px;
 }
 .ipsosenso-hero-carousel__dot:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Flèches prev/next — CSS propre, pas de classes Tailwind */
+.ipsosenso-hero-carousel__prev,
+.ipsosenso-hero-carousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.ipsosenso-hero-carousel__prev { left: 2rem; }
+.ipsosenso-hero-carousel__next { right: 2rem; }
+
+.ipsosenso-hero-carousel__prev:hover,
+.ipsosenso-hero-carousel__next:hover {
+  background: #fff;
+  color: var(--ipso-blue-deep);
+}
+
+@media (max-width: 768px) {
+  .ipsosenso-hero-carousel__prev { left: 0.5rem; }
+  .ipsosenso-hero-carousel__next { right: 0.5rem; }
+}
+
+.ipsosenso-hero__scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: #fff;
+  animation: ipsosenso-bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes ipsosenso-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
 }
 
 /* =============================================================
-   EXPERTISE CARD — card blanche, icône circulaire qui dépasse
+   EXPERTISE CARD
    ============================================================= */
 
 .ipsosenso-expertise-card {
@@ -313,13 +413,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
+  flex-shrink: 0;
 }
 
 .ipsosenso-expertise-card__title {
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #141e6e;
+  color: #141e6e !important;
   margin: 0 30px 15px;
   font-family: 'Poppins', sans-serif;
 }
@@ -327,30 +427,32 @@ body {
 .ipsosenso-expertise-card__subtitle {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--ipso-orange);
+  color: var(--ipso-orange) !important;
   margin: 0 0 15px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .ipsosenso-expertise-card__list {
-  font-size: 1.0625rem; /* 17px */
+  font-size: 1.0625rem;
   font-weight: 300;
-  color: #6c757d;
+  color: #6c757d !important;
   margin: 0 30px 15px;
   line-height: 1.65;
   letter-spacing: 0.5px;
   list-style: none;
   padding: 0;
   text-align: center;
+  width: 100%;
 }
 
 .ipsosenso-expertise-card__list li {
   padding: 4px 0;
+  color: #6c757d !important;
 }
 
 /* =============================================================
-   TWO VALUES — 2 blocs côte à côte
+   TWO VALUES
    ============================================================= */
 
 .ipsosenso-two-values {
@@ -369,7 +471,7 @@ body {
 }
 
 .ipsosenso-two-values__title {
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem;
   font-weight: 700;
   color: #141e6e;
   margin-bottom: 1rem;
@@ -378,7 +480,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.ipsosenso-two-values__title span {
+.ipsosenso-two-values__title > span {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -386,10 +488,11 @@ body {
   height: 4px;
   background: var(--ipso-green);
   border-radius: 20px;
+  display: block;
 }
 
 .ipsosenso-two-values__text {
-  font-size: 1.0625rem; /* 17px */
+  font-size: 1.0625rem;
   line-height: 1.75;
   letter-spacing: 0.5px;
   font-weight: 300;
@@ -397,7 +500,7 @@ body {
 }
 
 /* =============================================================
-   STAT — chiffre énorme + label jaune
+   STAT
    ============================================================= */
 
 .ipsosenso-stat {
@@ -405,8 +508,14 @@ body {
   padding: 30px;
 }
 
+.ipsosenso-stat__value {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
 .ipsosenso-stat__number {
-  font-size: 6rem; /* 96px */
+  font-size: 6rem;
   font-weight: 700;
   color: #fff;
   line-height: 1;
@@ -414,7 +523,7 @@ body {
 }
 
 .ipsosenso-stat__suffix {
-  font-size: 2rem; /* 32px */
+  font-size: 2rem;
   font-weight: 700;
   color: #fff;
   margin-left: 0.5rem;
@@ -422,12 +531,11 @@ body {
 
 .ipsosenso-stat__label {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.3125rem; /* 21px */
+  font-size: 1.3125rem;
   font-weight: 300;
   color: var(--ipso-yellow);
   margin-top: 1rem;
   letter-spacing: 0.02em;
-  text-transform: none;
 }
 
 @media (max-width: 768px) {
@@ -437,7 +545,7 @@ body {
 }
 
 /* =============================================================
-   CLIENT LOGOS — grille avec hover couleur
+   CLIENT LOGOS
    ============================================================= */
 
 .ipsosenso-client-logo-grid {
@@ -480,31 +588,176 @@ body {
 }
 
 /* =============================================================
+   NAVBAR
+   ============================================================= */
+
+.ipsosenso-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 1.5rem 2rem;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+.ipsosenso-navbar--scrolled {
+  background-color: rgba(20, 30, 110, 0.95);
+  padding: 0.75rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ipsosenso-navbar__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.ipsosenso-navbar__logo img {
+  height: 40px;
+  width: auto;
+}
+
+.ipsosenso-navbar__menu {
+  display: none;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .ipsosenso-navbar__menu { display: flex; }
+}
+
+.ipsosenso-navbar__link {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+.ipsosenso-navbar__link:hover {
+  color: var(--ipso-green);
+}
+
+.ipsosenso-navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  background: var(--ipso-orange);
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+.ipsosenso-navbar__cta:hover {
+  background: #d77b00;
+  transform: translateY(-1px);
+}
+
+/* =============================================================
+   FOOTER
+   ============================================================= */
+
+.ipsosenso-footer {
+  background: #141e6e;
+  color: #fff;
+  padding: 4rem 2rem 2rem;
+}
+
+.ipsosenso-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .ipsosenso-footer__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ipsosenso-footer__col h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+.ipsosenso-footer__col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--ipso-green);
+  border-radius: 20px;
+}
+
+.ipsosenso-footer__col p,
+.ipsosenso-footer__col a {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.ipsosenso-footer__col a:hover {
+  color: var(--ipso-green);
+}
+
+.ipsosenso-footer__social {
+  display: flex;
+  gap: 1rem;
+}
+.ipsosenso-footer__social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.ipsosenso-footer__social a:hover {
+  background: var(--ipso-green);
+  transform: translateY(-2px);
+}
+.ipsosenso-footer__social img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.ipsosenso-footer__bottom {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =============================================================
    Animations
    ============================================================= */
 
 @keyframes ipsosenso-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .ipsosenso-reveal {
   animation: ipsosenso-fade-up 0.8s ease-out both;
-}
-
-/* =============================================================
-   Boutons arrondis façon pilule
-   ============================================================= */
-
-.brassart-button,
-.mercury-button,
-button[class*="mercury"],
-a[class*="mercury"] {
-  border-radius: 9999px !important;
 }

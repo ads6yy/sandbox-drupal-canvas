@@ -8,7 +8,9 @@ weight: 0
 items:
   - sdc.ipsosenso.client-logo-grid
   - sdc.ipsosenso.expertise-card
+  - sdc.ipsosenso.footer
   - sdc.ipsosenso.hero-carousel
+  - sdc.ipsosenso.navbar
   - sdc.ipsosenso.section-title
   - sdc.ipsosenso.stat
   - sdc.ipsosenso.strate

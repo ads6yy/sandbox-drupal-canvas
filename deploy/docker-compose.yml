@@ -38,7 +38,7 @@ services:
     depends_on:
       - php
     ports:
-      - '8701:80'
+      - '8702:80'
 
 volumes:
   drupal-canvas-data: {}

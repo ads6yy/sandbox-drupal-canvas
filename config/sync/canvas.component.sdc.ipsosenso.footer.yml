@@ -1,0 +1,18 @@
+uuid: 88f0913d-4f36-45a2-a3d0-a9da0056c8f2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ipsosenso
+active_version: 8fe3be948e0194e1
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: Footer
+id: sdc.ipsosenso.footer
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:footer'

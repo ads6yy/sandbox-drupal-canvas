@@ -1,0 +1,8 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Footer
+group: IpsoSenso
+status: stable
+description: "Pied de page avec adresse, liens rapides et réseaux sociaux."
+props:
+  type: object
+  properties: {}
