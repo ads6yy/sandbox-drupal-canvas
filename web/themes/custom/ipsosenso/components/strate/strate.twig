@@ -1,0 +1,28 @@
+{% set variant_classes = {
+  'green-photo': 'ipsosenso-strate--green-photo',
+  'light-texture': 'ipsosenso-strate--light-texture',
+  'dark-photo': 'ipsosenso-strate--dark-photo',
+  'clean': 'ipsosenso-strate--clean',
+} %}
+
+{% set padding_classes = {
+  'normal': 'py-12 md:py-16',
+  'large': 'py-16 md:py-24',
+  'xlarge': 'py-20 md:py-32',
+} %}
+
+{% set variant_class = variant_classes[variant|default('light-texture')] %}
+{% set padding_class = padding_classes[padding|default('large')] %}
+
+<section class="ipsosenso-strate {{ variant_class }} {{ padding_class }} relative overflow-hidden cq-full">
+  {# Couche image de fond #}
+  <div class="ipsosenso-strate__bg absolute inset-0 z-0"></div>
+
+  {# Overlay couleur si nécessaire #}
+  <div class="ipsosenso-strate__overlay absolute inset-0 z-1 pointer-events-none"></div>
+
+  {# Contenu #}
+  <div class="relative z-2 container mx-auto px-4">
+    {% block strate_content %}{% endblock %}
+  </div>
+</section>

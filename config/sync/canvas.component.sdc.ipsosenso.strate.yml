@@ -1,0 +1,45 @@
+uuid: 2e955f8c-c1c1-40fe-a286-c07bd3cfdcf0
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - ipsosenso
+active_version: 50b3641a57af0ac6
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        variant:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: light-texture
+          expression: ℹ︎list_string␟value
+        padding:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: large
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions:
+        strate_content:
+          title: Contenu
+          description: 'Le contenu de la strate (titres, textes, colonnes).'
+label: Strate
+id: sdc.ipsosenso.strate
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:strate'

@@ -1,0 +1,7 @@
+tokens:
+  version: VERSION
+  css:
+    theme:
+      src/theme.css:
+        preprocess: false
+        weight: 100

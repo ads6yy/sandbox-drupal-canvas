@@ -1,0 +1,9 @@
+uuid: c549ba25-04f7-4381-a36a-17bf80819771
+langcode: en
+status: true
+dependencies: {  }
+name: Other
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.navigation.title

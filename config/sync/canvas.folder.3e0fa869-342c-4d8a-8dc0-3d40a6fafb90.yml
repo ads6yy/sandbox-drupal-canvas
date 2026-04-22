@@ -1,0 +1,13 @@
+uuid: 3e0fa869-342c-4d8a-8dc0-3d40a6fafb90
+langcode: en
+status: true
+dependencies: {  }
+name: System
+configEntityTypeId: component
+weight: 0
+items:
+  - block.system_branding_block
+  - block.system_breadcrumb_block
+  - block.system_clear_cache_block
+  - block.system_messages_block
+  - block.system_powered_by_block

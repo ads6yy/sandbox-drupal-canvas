@@ -1,0 +1,55 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Section Title
+group: IpsoSenso
+status: stable
+description: "Titre de section avec barre colorée décorative en dessous."
+props:
+  type: object
+  required:
+    - title
+    - level
+    - color
+    - accent
+    - align
+  properties:
+    title:
+      type: string
+      title: Titre
+      default: "Nos expertises"
+      examples:
+        - "Nos expertises"
+    level:
+      type: number
+      title: Niveau
+      enum: [1, 2, 3, 4]
+      default: 2
+      examples:
+        - 2
+    color:
+      type: string
+      title: Couleur du titre
+      enum:
+        - primary
+        - inverted
+      default: primary
+      examples:
+        - primary
+    accent:
+      type: string
+      title: Couleur du séparateur
+      enum:
+        - green
+        - yellow
+        - orange
+      default: green
+      examples:
+        - green
+    align:
+      type: string
+      title: Alignement
+      enum:
+        - left
+        - center
+      default: center
+      examples:
+        - center

@@ -1,0 +1,105 @@
+uuid: d3465af6-9804-4ce3-bcb0-6dda388969d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - ipsosenso
+active_version: f85f17da53596b33
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        value:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '65'
+          expression: ℹ︎string␟value
+        suffix:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '%'
+          expression: ℹ︎string␟value
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Collaborateurs
+          expression: ℹ︎string␟value
+        color:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: inverted
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  2ce0342b236e57e6:
+    settings:
+      prop_field_definitions:
+        value:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '65'
+          expression: ℹ︎string␟value
+        suffix:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '%'
+          expression: ℹ︎string␟value
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Collaborateurs
+          expression: ℹ︎string␟value
+        color:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: Stat
+id: sdc.ipsosenso.stat
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:stat'

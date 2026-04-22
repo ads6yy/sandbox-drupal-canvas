@@ -1,0 +1,50 @@
+{% set slides = [
+  { 'title': slide1_title|default('Numérique'), 'text': slide1_text|default('Accompagnement transformation digitale.') },
+  { 'title': slide2_title|default('Technologique'), 'text': slide2_text|default('Experts Java, PHP, JavaScript, mobile.') },
+  { 'title': slide3_title|default('Pragmatique'), 'text': slide3_text|default('Engagement forfaitaire, approche agile.') },
+] %}
+
+<section class="ipsosenso-hero relative h-screen min-h-[600px] w-full overflow-hidden cq-full">
+  {# Image/couche de fond #}
+  <div class="ipsosenso-hero__bg absolute inset-0 z-0"></div>
+
+  {# Overlay dégradé #}
+  <div class="ipsosenso-hero__overlay absolute inset-0 z-1 bg-gradient-to-r from-[#141e6e]/85 via-[#141e6e]/50 to-[#141e6e]/10 pointer-events-none"></div>
+
+  {# Carrousel à droite #}
+  <div class="relative z-2 h-full container mx-auto px-4 flex items-center justify-end">
+    <div class="ipsosenso-hero-carousel w-full md:w-1/2 lg:w-2/5 text-white"
+         data-ipsosenso-carousel
+         data-autoplay="5000">
+      <div class="ipsosenso-hero-carousel__slides relative">
+        {% for slide in slides %}
+          <div class="ipsosenso-hero-carousel__slide transition-opacity duration-700 ease-in-out {{ loop.first ? 'opacity-100 relative' : 'opacity-0 absolute inset-0' }}"
+               data-slide-index="{{ loop.index0 }}">
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight mb-6 text-[#a5e146]">
+              {{ slide.title }}
+            </h2>
+            <p class="text-lg md:text-xl leading-relaxed">
+              {{ slide.text }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+
+      {# Pagination dots #}
+      <div class="ipsosenso-hero-carousel__pagination flex gap-3 mt-12">
+        {% for slide in slides %}
+          <button class="ipsosenso-hero-carousel__dot w-3 h-3 rounded-full transition-all border border-white {{ loop.first ? 'bg-white w-8' : 'bg-transparent' }}"
+                  data-slide-target="{{ loop.index0 }}"
+                  aria-label="Slide {{ loop.index }}"></button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {# Indicateur de scroll en bas #}
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-2 text-white animate-bounce">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+    </svg>
+  </div>
+</section>

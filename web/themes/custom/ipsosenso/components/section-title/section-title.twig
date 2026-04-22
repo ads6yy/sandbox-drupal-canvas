@@ -1,0 +1,29 @@
+{% set tag = 'h' ~ (level|default(2)) %}
+
+{% set color_class = {
+  'primary': 'text-primary',
+  'inverted': 'text-white'
+}[color|default('primary')] %}
+
+{% set accent_class = {
+  'green': 'bg-[#a5e146]',
+  'yellow': 'bg-[#e1ff80]',
+  'orange': 'bg-[#f08c05]'
+}[accent|default('green')] %}
+
+{% set align_class = {
+  'left': 'text-left',
+  'center': 'text-center mx-auto'
+}[align|default('center')] %}
+
+{% set justify_class = {
+  'left': '',
+  'center': 'mx-auto'
+}[align|default('center')] %}
+
+<div class="ipsosenso-section-title mb-12 md:mb-16 {{ align_class }} max-w-3xl">
+  <{{ tag }} class="ipsosenso-section-title__heading font-bold leading-tight mb-6 {{ color_class }} text-4xl md:text-5xl lg:text-6xl">
+    {{ title }}
+  </{{ tag }}>
+  <span class="ipsosenso-section-title__accent block h-1.5 w-24 rounded-full {{ accent_class }} {{ justify_class }}"></span>
+</div>

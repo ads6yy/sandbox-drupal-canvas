@@ -1,0 +1,78 @@
+uuid: 8fdd1659-afe7-4167-bd8a-ec458a890735
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ipsosenso
+active_version: 4529f1e6ae21dfee
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        slide1_title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Numérique
+          expression: ℹ︎string␟value
+        slide1_text:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Accompagnement complet pour la transformation digitale.'
+          expression: ℹ︎string␟value
+        slide2_title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Technologique
+          expression: ℹ︎string␟value
+        slide2_text:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Experts passionnés des technologies modernes.'
+          expression: ℹ︎string␟value
+        slide3_title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Pragmatique
+          expression: ℹ︎string␟value
+        slide3_text:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Engagement forfaitaire, approche agile.'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Hero Carousel'
+id: sdc.ipsosenso.hero-carousel
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:hero-carousel'

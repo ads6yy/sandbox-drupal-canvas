@@ -1,0 +1,36 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Strate
+group: IpsoSenso
+status: stable
+description: "Section pleine largeur avec image de fond, couleur d'overlay et séparateur coloré sous le titre."
+props:
+  type: object
+  required:
+    - variant
+    - padding
+  properties:
+    variant:
+      type: string
+      title: Variante
+      enum:
+        - green-photo
+        - light-texture
+        - dark-photo
+        - clean
+      default: light-texture
+      examples:
+        - light-texture
+    padding:
+      type: string
+      title: Espacement vertical
+      enum:
+        - normal
+        - large
+        - xlarge
+      default: large
+      examples:
+        - large
+slots:
+  strate_content:
+    title: Contenu
+    description: Le contenu de la strate (titres, textes, colonnes).

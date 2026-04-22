@@ -1,0 +1,12 @@
+name: IpsoSenso
+type: theme
+"base theme": mercury
+libraries:
+  - ipsosenso/tokens
+logo: logo.svg
+description: "Thème de démonstration Drupal Canvas — déclinaison du socle Mercury avec l'identité visuelle IpsoSenso."
+core_version_requirement: ^11.3
+regions:
+  content: Content
+  header: Header
+  footer: Footer

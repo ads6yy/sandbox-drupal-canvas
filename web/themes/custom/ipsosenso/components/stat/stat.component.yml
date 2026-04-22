@@ -1,0 +1,46 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Stat
+group: IpsoSenso
+status: stable
+description: "Chiffre clé avec animation de compteur au scroll, label et éventuel suffixe (%, M€...)."
+props:
+  type: object
+  required:
+    - value
+    - label
+    - color
+  properties:
+    value:
+      type: string
+      title: Valeur
+      default: "65"
+      examples:
+        - "65"
+    suffix:
+      type: string
+      title: Suffixe
+      default: ""
+      examples:
+        - "%"
+    label:
+      type: string
+      title: Libellé
+      default: "Collaborateurs"
+      examples:
+        - "Collaborateurs"
+    color:
+      type: string
+      title: Couleur
+      enum:
+        - primary
+        - inverted
+        - accent
+      default: inverted
+      examples:
+        - inverted
+libraryOverrides:
+  js:
+    stat.js:
+      preprocess: false
+      attributes:
+        type: module

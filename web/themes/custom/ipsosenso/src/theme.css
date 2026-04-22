@@ -1,0 +1,186 @@
+/**
+ * Tokens de design — déclinaison visuelle du socle Mercury.
+ *
+ * Palette basée sur la charte graphique de référence :
+ * - Primary : bleu nuit (#141e6e) — texte, titres, navbar
+ * - Secondary : orange (#f08c05) — CTA, accents
+ * - Accent : bleu vif (#0251ab) — liens, hover
+ */
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.20 0.06 268);
+  --card: oklch(0.98 0.005 268);
+  --card-foreground: oklch(0.20 0.06 268);
+  --primary: oklch(0.26 0.15 278);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.70 0.18 55);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.97 0.005 268);
+  --muted-foreground: oklch(0.45 0.05 268);
+  --accent: oklch(0.50 0.18 258);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.60 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.88 0.01 268);
+  --input: oklch(0.88 0.01 268);
+  --font-sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "Fira Mono", monospace;
+  --radius: 9999px;
+
+  /* Couleurs signature IpsoSenso */
+  --ipso-blue-deep: #141e6e;
+  --ipso-blue-bright: #0251ab;
+  --ipso-orange: #f08c05;
+  --ipso-green: #a5e146;
+  --ipso-yellow: #e1ff80;
+  --ipso-green-fresh: #40ff68;
+}
+
+/* Importer Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;900&display=swap');
+
+/* =============================================================
+   STRATE — composant section avec image de fond et accents
+   ============================================================= */
+
+.ipsosenso-strate {
+  position: relative;
+  isolation: isolate;
+}
+
+.ipsosenso-strate__bg {
+  background-size: cover !important;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Variante : image verte façon forêt + overlay vert translucide */
+.ipsosenso-strate--green-photo .ipsosenso-strate__bg {
+  background-image: url('/themes/custom/ipsosenso/assets/0022.png');
+}
+.ipsosenso-strate--green-photo .ipsosenso-strate__overlay {
+  background-color: rgba(97, 185, 77, 0.8);
+}
+.ipsosenso-strate--green-photo,
+.ipsosenso-strate--green-photo h1,
+.ipsosenso-strate--green-photo h2,
+.ipsosenso-strate--green-photo h3,
+.ipsosenso-strate--green-photo h4,
+.ipsosenso-strate--green-photo p,
+.ipsosenso-strate--green-photo li {
+  color: #ffffff !important;
+}
+
+/* Variante : fond clair avec texture SVG légère */
+.ipsosenso-strate--light-texture {
+  background-color: #f8f9fa;
+}
+.ipsosenso-strate--light-texture .ipsosenso-strate__bg {
+  background-image: url('/themes/custom/ipsosenso/assets/texture.svg');
+  opacity: 0.2;
+  right: -10%;
+  width: 90%;
+}
+
+/* Variante : image sombre plein écran (chiffres) */
+.ipsosenso-strate--dark-photo .ipsosenso-strate__bg {
+  background-image: url('/themes/custom/ipsosenso/assets/0011.png');
+}
+.ipsosenso-strate--dark-photo .ipsosenso-strate__overlay {
+  background-color: rgba(20, 30, 110, 0.75);
+}
+.ipsosenso-strate--dark-photo,
+.ipsosenso-strate--dark-photo h1,
+.ipsosenso-strate--dark-photo h2,
+.ipsosenso-strate--dark-photo h3,
+.ipsosenso-strate--dark-photo h4,
+.ipsosenso-strate--dark-photo p,
+.ipsosenso-strate--dark-photo li {
+  color: #ffffff !important;
+}
+
+/* Variante : simple fond blanc, pas d'image */
+.ipsosenso-strate--clean {
+  background-color: #ffffff;
+}
+.ipsosenso-strate--clean .ipsosenso-strate__bg,
+.ipsosenso-strate--clean .ipsosenso-strate__overlay {
+  display: none;
+}
+
+/* =============================================================
+   HERO CAROUSEL
+   ============================================================= */
+
+.ipsosenso-hero__bg {
+  background-image: url('/themes/custom/ipsosenso/assets/0022.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ipsosenso-hero-carousel__slide h2 {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.ipsosenso-hero-carousel__dot {
+  transition: all 0.3s ease;
+}
+
+.ipsosenso-hero-carousel__dot:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* =============================================================
+   Accents et utilitaires
+   ============================================================= */
+
+.ipsosenso-accent-bar {
+  display: block;
+  height: 6px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.ipsosenso-accent-bar--green { background-color: var(--ipso-green); }
+.ipsosenso-accent-bar--yellow { background-color: var(--ipso-yellow); }
+.ipsosenso-accent-bar--orange { background-color: var(--ipso-orange); }
+
+/* =============================================================
+   Cards clients : mise en forme des logos
+   ============================================================= */
+
+.ipsosenso-client-logo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  max-height: 60px;
+  width: auto;
+}
+
+.ipsosenso-client-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* =============================================================
+   Animations au scroll
+   ============================================================= */
+
+@keyframes ipsosenso-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ipsosenso-reveal {
+  animation: ipsosenso-fade-up 0.8s ease-out both;
+}
