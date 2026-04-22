@@ -1,22 +1,10 @@
-{% set color_class = {
-  'primary': 'text-[#141e6e]',
-  'inverted': 'text-white',
-  'accent': 'text-[#f08c05]'
-}[color|default('inverted')] %}
-
-<div class="ipsosenso-stat text-center {{ color_class }}" data-ipsosenso-stat>
+<div class="ipsosenso-stat" data-ipsosenso-stat>
   <div class="ipsosenso-stat__value flex items-baseline justify-center">
-    <span class="ipsosenso-stat__number font-bold text-6xl md:text-7xl lg:text-8xl leading-none"
-          data-stat-value="{{ value }}">
-      {{ value }}
-    </span>
+    <span class="ipsosenso-stat__number"
+          data-stat-value="{{ value }}">{{ value }}</span>
     {% if suffix %}
-      <span class="ipsosenso-stat__suffix font-bold text-4xl md:text-5xl lg:text-6xl ml-2">
-        {{ suffix }}
-      </span>
+      <span class="ipsosenso-stat__suffix">{{ suffix }}</span>
     {% endif %}
   </div>
-  <div class="ipsosenso-stat__label text-lg md:text-xl font-light mt-4 uppercase tracking-wider opacity-90">
-    {{ label }}
-  </div>
+  <div class="ipsosenso-stat__label">{{ label }}</div>
 </div>

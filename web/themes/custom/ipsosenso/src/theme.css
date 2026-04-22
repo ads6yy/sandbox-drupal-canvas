@@ -30,24 +30,31 @@
   --ipso-orange: #f08c05;
   --ipso-green: #a5e146;
   --ipso-green-alt: #61b94d;
-  --ipso-yellow: #e1ff80;
   --ipso-green-fresh: #40ff68;
+  --ipso-green-bright: #4edd4a;
+  --ipso-green-soft: #cfe345;
+  --ipso-yellow: #e1ff80;
+  --ipso-dark-overlay: rgba(29, 37, 42, 0.7);
 }
 
 /* Import Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;800;900&display=swap');
 
 body {
   font-family: 'Poppins', sans-serif !important;
 }
 
 /* =============================================================
-   STRATE — section pleine largeur avec image de fond
+   STRATE — section pleine largeur pleine hauteur 100vh
    ============================================================= */
 
 .ipsosenso-strate {
   position: relative;
   isolation: isolate;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 0;
 }
 
 .ipsosenso-strate__bg {
@@ -56,16 +63,17 @@ body {
   background-repeat: no-repeat !important;
 }
 
-/* Variante verte : titre principal + intro */
+/* Variante verte : expertises (équiv. strate01) */
 .ipsosenso-strate--green-photo {
   background-color: var(--ipso-green-alt);
+  color: #fff;
 }
 .ipsosenso-strate--green-photo .ipsosenso-strate__bg {
   background-image: url('/themes/custom/ipsosenso/assets/0022.png');
-  opacity: 0.4;
+  opacity: 1;
 }
 .ipsosenso-strate--green-photo .ipsosenso-strate__overlay {
-  background-color: rgba(97, 185, 77, 0.7);
+  background-color: rgba(97, 185, 77, 0.5);
 }
 .ipsosenso-strate--green-photo,
 .ipsosenso-strate--green-photo h1,
@@ -77,9 +85,10 @@ body {
   color: #ffffff !important;
 }
 
-/* Variante light-texture : fond clair avec texture SVG */
+/* Variante light-texture : fond clair avec texture SVG (strate02, strate03) */
 .ipsosenso-strate--light-texture {
   background-color: #f8f9fa;
+  color: #303538;
 }
 .ipsosenso-strate--light-texture .ipsosenso-strate__bg {
   background-image: url('/themes/custom/ipsosenso/assets/texture.svg');
@@ -88,20 +97,24 @@ body {
   width: 90%;
 }
 
-/* Variante dark-photo : image sombre plein écran (chiffres) */
+/* Variante dark-photo : image sombre (strate04 chiffres) */
+.ipsosenso-strate--dark-photo {
+  background-color: #f8f9fa;
+  color: #303538;
+}
 .ipsosenso-strate--dark-photo .ipsosenso-strate__bg {
   background-image: url('/themes/custom/ipsosenso/assets/0011.png');
+  opacity: 1;
 }
 .ipsosenso-strate--dark-photo .ipsosenso-strate__overlay {
-  background-color: rgba(20, 30, 110, 0.78);
+  background-color: rgba(20, 30, 110, 0.55);
 }
 .ipsosenso-strate--dark-photo,
 .ipsosenso-strate--dark-photo h1,
 .ipsosenso-strate--dark-photo h2,
 .ipsosenso-strate--dark-photo h3,
 .ipsosenso-strate--dark-photo h4,
-.ipsosenso-strate--dark-photo p,
-.ipsosenso-strate--dark-photo li {
+.ipsosenso-strate--dark-photo p {
   color: #ffffff !important;
 }
 
@@ -114,21 +127,149 @@ body {
   display: none;
 }
 
+/* Paddings spécifiques — override minimum 100vh si demandé */
+.ipsosenso-strate--padding-normal { padding: 60px 0; min-height: auto; }
+.ipsosenso-strate--padding-large { padding: 100px 0; }
+.ipsosenso-strate--padding-xlarge { padding: 120px 0; }
+
 /* =============================================================
-   HERO CAROUSEL
+   SECTION TITLE — titre de section avec barre décorative
+   ============================================================= */
+
+.ipsosenso-section-title {
+  max-width: 992px;
+  margin: 0 auto 75px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ipsosenso-section-title__heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.125rem; /* 50px */
+  font-weight: 700;
+  line-height: 1.2;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .ipsosenso-section-title__heading {
+    font-size: 2rem;
+  }
+}
+
+.ipsosenso-section-title__accent {
+  position: relative;
+  display: block;
+  height: 6px;
+  width: 100px;
+  border-radius: 20px;
+  margin: 0 auto;
+  bottom: 0;
+}
+
+.ipsosenso-section-title__accent--green { background: var(--ipso-green); }
+.ipsosenso-section-title__accent--green-fresh { background: var(--ipso-green-fresh); }
+.ipsosenso-section-title__accent--yellow { background: var(--ipso-yellow); }
+.ipsosenso-section-title__accent--orange { background: var(--ipso-orange); }
+
+.ipsosenso-section-title--align-left {
+  text-align: left;
+  margin-left: 0;
+}
+.ipsosenso-section-title--align-left .ipsosenso-section-title__accent {
+  margin: 0;
+}
+
+/* =============================================================
+   HERO CAROUSEL — vidéo fixed + slides centrés + titre énorme
    ============================================================= */
 
 .ipsosenso-hero {
+  position: relative;
+  min-height: 85vh;
+  max-height: 960px;
+  overflow: hidden;
   background-color: #141e6e;
 }
 
 .ipsosenso-hero__video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: saturate(1.1);
 }
 
+.ipsosenso-hero__overlay {
+  background: rgba(29, 37, 42, 0.55);
+}
+
+.ipsosenso-hero__slide-bg {
+  background: rgba(29, 37, 42, 0.7);
+}
+
+.ipsosenso-hero-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 960px;
+  min-height: 85vh;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  padding: 120px 60px 60px;
+  text-align: center;
+}
+
+.ipsosenso-hero-carousel__slide {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
 .ipsosenso-hero-carousel__slide h2 {
-  font-weight: 900;
+  font-size: 6.875rem; /* 110px desktop */
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 30px;
+  line-height: 1;
   letter-spacing: -0.02em;
+  background: linear-gradient(45deg, var(--ipso-green-bright), var(--ipso-green-soft));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.ipsosenso-hero-carousel__slide p {
+  font-size: 1.25rem; /* 20px desktop */
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.03rem;
+  max-width: 768px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .ipsosenso-hero-carousel__slide h2 {
+    font-size: 2.625rem; /* 42px mobile */
+  }
+  .ipsosenso-hero-carousel__slide p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
 }
 
 .ipsosenso-hero-carousel__dot {
@@ -139,14 +280,196 @@ body {
 }
 
 /* =============================================================
-   CLIENT LOGOS
+   EXPERTISE CARD — card blanche, icône circulaire qui dépasse
    ============================================================= */
+
+.ipsosenso-expertise-card {
+  background: #fff;
+  border-radius: 0.25rem;
+  color: #495057;
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 55px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ipsosenso-expertise-card:hover {
+  transform: translateY(-8px);
+}
+
+.ipsosenso-expertise-card__icon {
+  width: 55px;
+  height: 55px;
+  margin-top: -55px;
+  margin-bottom: 30px;
+  background: #303538;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+}
+
+.ipsosenso-expertise-card__title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: #141e6e;
+  margin: 0 30px 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ipsosenso-expertise-card__subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ipso-orange);
+  margin: 0 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ipsosenso-expertise-card__list {
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 300;
+  color: #6c757d;
+  margin: 0 30px 15px;
+  line-height: 1.65;
+  letter-spacing: 0.5px;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.ipsosenso-expertise-card__list li {
+  padding: 4px 0;
+}
+
+/* =============================================================
+   TWO VALUES — 2 blocs côte à côte
+   ============================================================= */
+
+.ipsosenso-two-values {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+}
+
+@media (min-width: 768px) {
+  .ipsosenso-two-values {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.ipsosenso-two-values__title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: #141e6e;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ipsosenso-two-values__title span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--ipso-green);
+  border-radius: 20px;
+}
+
+.ipsosenso-two-values__text {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  color: #6c757d;
+}
+
+/* =============================================================
+   STAT — chiffre énorme + label jaune
+   ============================================================= */
+
+.ipsosenso-stat {
+  text-align: center;
+  padding: 30px;
+}
+
+.ipsosenso-stat__number {
+  font-size: 6rem; /* 96px */
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ipsosenso-stat__suffix {
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+.ipsosenso-stat__label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3125rem; /* 21px */
+  font-weight: 300;
+  color: var(--ipso-yellow);
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+@media (max-width: 768px) {
+  .ipsosenso-stat__number { font-size: 4rem; }
+  .ipsosenso-stat__suffix { font-size: 1.5rem; }
+  .ipsosenso-stat__label { font-size: 1rem; }
+}
+
+/* =============================================================
+   CLIENT LOGOS — grille avec hover couleur
+   ============================================================= */
+
+.ipsosenso-client-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ipsosenso-client-logo-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem 2rem;
+  }
+}
+
+.ipsosenso-client-logo-grid__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  height: 100px;
+}
 
 .ipsosenso-client-logo {
   filter: grayscale(100%);
-  opacity: 0.7;
+  opacity: 0.6;
   transition: all 0.3s ease;
-  max-height: 60px;
+  max-height: 50px;
+  max-width: 100%;
   width: auto;
   object-fit: contain;
 }
