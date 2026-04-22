@@ -5,3 +5,8 @@ tokens:
       src/theme.css:
         preprocess: false
         weight: 100
+  js:
+    lib/detect-editor.js:
+      preprocess: false
+      attributes:
+        type: module

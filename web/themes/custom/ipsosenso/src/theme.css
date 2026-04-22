@@ -3,30 +3,29 @@
  */
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.20 0.06 268);
-  --card: oklch(0.98 0.005 268);
-  --card-foreground: oklch(0.20 0.06 268);
-  --primary: oklch(0.26 0.15 278);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.70 0.18 55);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.97 0.005 268);
-  --muted-foreground: oklch(0.45 0.05 268);
-  --accent: oklch(0.50 0.18 258);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.60 0.22 25);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.88 0.01 268);
-  --input: oklch(0.88 0.01 268);
+  --background: #ffffff;
+  --foreground: #303538;
+  --card: #f7f8fc;
+  --card-foreground: #303538;
+  --primary: #303538;
+  --primary-foreground: #ffffff;
+  --secondary: #f07900;
+  --secondary-foreground: #ffffff;
+  --muted: #f4f5f9;
+  --muted-foreground: #303538;
+  --accent: #303538;
+  --accent-foreground: #ffffff;
+  --destructive: #e62b34;
+  --destructive-foreground: #ffffff;
+  --border: #d4d7de;
+  --input: #d4d7de;
   --font-sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: "Fira Mono", monospace;
   --radius: 9999px;
 
   /* Couleurs signature */
-  --ipso-blue-deep: #141e6e;
-  --ipso-blue-bright: #0251ab;
+  --ipso-dark: #303538;
   --ipso-orange: #f08c05;
   --ipso-green: #a5e146;
   --ipso-green-alt: #61b94d;
@@ -90,7 +89,7 @@ body {
   background-image: url('/themes/custom/ipsosenso/assets/0022.png');
 }
 .ipsosenso-strate--green-photo .ipsosenso-strate__overlay {
-  background-color: rgba(97, 185, 77, 0.55);
+  background-color: rgba(97, 185, 77, 0.25);
 }
 /* Texte blanc dans la strate verte MAIS PAS dans les cards (qui ont leur propre background blanc) */
 .ipsosenso-strate--green-photo .ipsosenso-strate__content > * {
@@ -123,7 +122,7 @@ body {
   background-image: url('/themes/custom/ipsosenso/assets/0011.png');
 }
 .ipsosenso-strate--dark-photo .ipsosenso-strate__overlay {
-  background-color: rgba(20, 30, 110, 0.6);
+  background-color: rgba(48, 53, 56, 0.3);
 }
 .ipsosenso-strate--dark-photo,
 .ipsosenso-strate--dark-photo h1,
@@ -207,7 +206,7 @@ body {
   max-height: 960px;
   height: 85vh;
   overflow: hidden;
-  background-color: #141e6e;
+  background-color: #303538;
 }
 
 .ipsosenso-hero__video {
@@ -356,7 +355,7 @@ body {
 .ipsosenso-hero-carousel__prev:hover,
 .ipsosenso-hero-carousel__next:hover {
   background: #fff;
-  color: var(--ipso-blue-deep);
+  color: var(--ipso-dark);
 }
 
 @media (max-width: 768px) {
@@ -419,7 +418,7 @@ body {
 .ipsosenso-expertise-card__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #141e6e !important;
+  color: #303538 !important;
   margin: 0 30px 15px;
   font-family: 'Poppins', sans-serif;
 }
@@ -473,7 +472,7 @@ body {
 .ipsosenso-two-values__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #141e6e;
+  color: #303538;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   position: relative;
@@ -601,7 +600,7 @@ body {
   transition: background-color 0.3s ease, padding 0.3s ease;
 }
 .ipsosenso-navbar--scrolled {
-  background-color: rgba(20, 30, 110, 0.95);
+  background-color: rgba(48, 53, 56, 0.95);
   padding: 0.75rem 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
@@ -666,7 +665,7 @@ body {
    ============================================================= */
 
 .ipsosenso-footer {
-  background: #141e6e;
+  background: #303538;
   color: #fff;
   padding: 4rem 2rem 2rem;
 }
@@ -760,4 +759,52 @@ body {
 
 .ipsosenso-reveal {
   animation: ipsosenso-fade-up 0.8s ease-out both;
+}
+
+/* =============================================================
+   Éditeur Canvas — adapter le rendu dans l'iframe preview
+   ============================================================= */
+
+.is-canvas-editor .ipsosenso-strate {
+  min-height: auto;
+  padding: 40px 0;
+}
+
+.is-canvas-editor .ipsosenso-navbar {
+  position: relative;
+  background-color: rgba(48, 53, 56, 0.95);
+}
+
+.is-canvas-editor .ipsosenso-hero {
+  min-height: 400px;
+  max-height: 600px;
+  height: auto;
+}
+
+.is-canvas-editor .ipsosenso-hero-carousel {
+  min-height: 400px;
+  padding: 40px 20px;
+}
+
+.is-canvas-editor .ipsosenso-hero-carousel__slide h2 {
+  font-size: 3rem;
+}
+
+.is-canvas-editor .ipsosenso-section-title {
+  margin-bottom: 40px;
+}
+
+.is-canvas-editor .ipsosenso-section-title__heading {
+  font-size: 2rem;
+}
+
+.is-canvas-editor .ipsosenso-stat__number {
+  font-size: 3.5rem;
+}
+
+/* En édition, empêcher les animations infinies */
+.is-canvas-editor .ipsosenso-hero__scroll-indicator,
+.is-canvas-editor .ipsosenso-expertise-card {
+  animation: none !important;
+  transition: none !important;
 }

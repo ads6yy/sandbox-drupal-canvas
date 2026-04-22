@@ -2,6 +2,15 @@
  * Hero Carousel — rotation auto avec flèches et dots.
  */
 
+const inCanvasEditor = () => {
+  try {
+    return !!(window?.parent?.drupalSettings?.canvas
+      && !window.parent.document.body.querySelector('[class^=_PagePreviewIframe]'));
+  } catch (e) {
+    return false;
+  }
+};
+
 const initCarousel = (root) => {
   const container = root.querySelector('.ipsosenso-hero-carousel') || root;
   const slides = root.querySelectorAll('.ipsosenso-hero-carousel__slide');
@@ -40,6 +49,7 @@ const initCarousel = (root) => {
 
   const start = () => {
     stop();
+    if (inCanvasEditor()) return; // pas d'autoplay dans l'éditeur
     timer = setInterval(next, autoplay);
   };
   const stop = () => {

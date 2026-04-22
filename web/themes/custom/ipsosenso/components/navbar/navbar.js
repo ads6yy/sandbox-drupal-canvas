@@ -2,7 +2,17 @@
  * Navbar — ajoute la classe --scrolled après X pixels de scroll.
  */
 
+const inCanvasEditor = () => {
+  try {
+    return !!(window?.parent?.drupalSettings?.canvas
+      && !window.parent.document.body.querySelector('[class^=_PagePreviewIframe]'));
+  } catch (e) {
+    return false;
+  }
+};
+
 const initNavbar = (nav) => {
+  if (inCanvasEditor()) return; // pas de scroll listener dans l'éditeur
   const threshold = 60;
   const update = () => {
     if (window.scrollY > threshold) {

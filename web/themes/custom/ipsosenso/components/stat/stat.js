@@ -2,8 +2,16 @@
  * Stat — animation de compteur au scroll (IntersectionObserver).
  */
 
+const inCanvasEditor = () => {
+  try {
+    return !!(window?.parent?.drupalSettings?.canvas
+      && !window.parent.document.body.querySelector('[class^=_PagePreviewIframe]'));
+  } catch (e) {
+    return false;
+  }
+};
+
 const animateNumber = (el, target, duration = 1500) => {
-  const isPercent = target.toString().includes('%');
   const numeric = parseFloat(String(target).replace(/[^0-9.]/g, ''));
   if (isNaN(numeric)) return;
 
@@ -15,7 +23,7 @@ const animateNumber = (el, target, duration = 1500) => {
 
   const tick = (now) => {
     const progress = Math.min((now - startTime) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+    const eased = 1 - Math.pow(1 - progress, 3);
     el.textContent = format(numeric * eased);
     if (progress < 1) {
       requestAnimationFrame(tick);
@@ -28,6 +36,7 @@ const animateNumber = (el, target, duration = 1500) => {
 };
 
 const init = () => {
+  if (inCanvasEditor()) return; // dans l'éditeur, garder la valeur finale sans animer
   const stats = document.querySelectorAll('[data-ipsosenso-stat]');
   if (stats.length === 0 || !('IntersectionObserver' in window)) return;
 
@@ -38,6 +47,7 @@ const init = () => {
         if (numberEl && !entry.target.dataset.animated) {
           entry.target.dataset.animated = 'true';
           const value = numberEl.dataset.statValue;
+          numberEl.textContent = '0';
           animateNumber(numberEl, value);
         }
       }
@@ -58,7 +68,5 @@ if (document.readyState === 'loading') {
 }
 
 if (typeof Drupal !== 'undefined') {
-  Drupal.behaviors.ipsosensoStat = {
-    attach: () => init(),
-  };
+  Drupal.behaviors.ipsosensoStat = { attach: () => init() };
 }

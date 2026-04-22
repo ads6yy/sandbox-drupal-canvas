@@ -46,3 +46,7 @@ $RECYCLE.BIN/
 
 # Claude Code configuration locale
 /.claude/
+
+# Backups locaux de la base de données
+/db-backup*.sql
+/*.sql
