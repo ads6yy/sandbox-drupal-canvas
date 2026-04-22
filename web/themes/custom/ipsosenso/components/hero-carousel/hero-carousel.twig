@@ -5,11 +5,14 @@
 ] %}
 
 <section class="ipsosenso-hero relative h-screen min-h-[600px] w-full overflow-hidden cq-full">
-  {# Image/couche de fond #}
-  <div class="ipsosenso-hero__bg absolute inset-0 z-0"></div>
+  {# Vidéo de fond #}
+  <video class="ipsosenso-hero__video absolute inset-0 w-full h-full object-cover z-0"
+         autoplay muted loop playsinline>
+    <source src="/themes/custom/ipsosenso/assets/header.mp4" type="video/mp4">
+  </video>
 
   {# Overlay dégradé #}
-  <div class="ipsosenso-hero__overlay absolute inset-0 z-1 bg-gradient-to-r from-[#141e6e]/85 via-[#141e6e]/50 to-[#141e6e]/10 pointer-events-none"></div>
+  <div class="ipsosenso-hero__overlay absolute inset-0 z-1 bg-gradient-to-r from-[#141e6e]/85 via-[#141e6e]/60 to-[#141e6e]/30 pointer-events-none"></div>
 
   {# Carrousel à droite #}
   <div class="relative z-2 h-full container mx-auto px-4 flex items-center justify-end">
@@ -33,13 +36,32 @@
       {# Pagination dots #}
       <div class="ipsosenso-hero-carousel__pagination flex gap-3 mt-12">
         {% for slide in slides %}
-          <button class="ipsosenso-hero-carousel__dot w-3 h-3 rounded-full transition-all border border-white {{ loop.first ? 'bg-white w-8' : 'bg-transparent' }}"
+          <button type="button"
+                  class="ipsosenso-hero-carousel__dot w-3 h-3 rounded-full transition-all border border-white {{ loop.first ? 'bg-white w-8' : 'bg-transparent' }}"
                   data-slide-target="{{ loop.index0 }}"
                   aria-label="Slide {{ loop.index }}"></button>
         {% endfor %}
       </div>
     </div>
   </div>
+
+  {# Flèches prev/next #}
+  <button type="button"
+          class="ipsosenso-hero-carousel__prev absolute left-8 top-1/2 -translate-y-1/2 z-3 w-12 h-12 rounded-full border-2 border-white text-white flex items-center justify-center hover:bg-white hover:text-[#141e6e] transition-all"
+          data-carousel-prev
+          aria-label="Slide précédente">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  </button>
+  <button type="button"
+          class="ipsosenso-hero-carousel__next absolute right-8 top-1/2 -translate-y-1/2 z-3 w-12 h-12 rounded-full border-2 border-white text-white flex items-center justify-center hover:bg-white hover:text-[#141e6e] transition-all"
+          data-carousel-next
+          aria-label="Slide suivante">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18l6-6-6-6"/>
+    </svg>
+  </button>
 
   {# Indicateur de scroll en bas #}
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-2 text-white animate-bounce">

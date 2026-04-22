@@ -1,0 +1,37 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Two Values
+group: IpsoSenso
+status: stable
+description: "Deux blocs de valeurs côte à côte avec titre souligné et texte descriptif."
+props:
+  type: object
+  required:
+    - title1
+    - text1
+    - title2
+    - text2
+  properties:
+    title1:
+      type: string
+      title: Titre 1
+      default: "Le sens de l'innovation"
+      examples:
+        - "Le sens de l'innovation"
+    text1:
+      type: string
+      title: Texte 1
+      default: "Description..."
+      examples:
+        - "Description..."
+    title2:
+      type: string
+      title: Titre 2
+      default: "Le sens de l'engagement"
+      examples:
+        - "Le sens de l'engagement"
+    text2:
+      type: string
+      title: Texte 2
+      default: "Description..."
+      examples:
+        - "Description..."

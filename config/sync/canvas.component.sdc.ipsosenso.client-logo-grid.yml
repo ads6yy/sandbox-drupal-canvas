@@ -1,0 +1,18 @@
+uuid: 76c4c82a-6016-4a28-9eb7-711ca1b27397
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ipsosenso
+active_version: 8fe3be948e0194e1
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Client Logo Grid'
+id: sdc.ipsosenso.client-logo-grid
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:client-logo-grid'

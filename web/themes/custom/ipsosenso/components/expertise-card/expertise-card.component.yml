@@ -1,0 +1,40 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Expertise Card
+group: IpsoSenso
+status: stable
+description: "Carte d'expertise avec icône SVG flottante au-dessus, titre et liste de compétences."
+props:
+  type: object
+  required:
+    - title
+    - icon
+    - items
+  properties:
+    title:
+      type: string
+      title: Titre
+      default: "Conception"
+      examples:
+        - "Conception"
+    subtitle:
+      type: string
+      title: Sous-titre
+      default: ""
+      examples:
+        - "Pilotage de projets"
+    icon:
+      type: string
+      title: Icône
+      enum:
+        - pencil
+        - code
+        - network
+      default: pencil
+      examples:
+        - pencil
+    items:
+      type: string
+      title: Liste (une ligne par item, séparées par \n)
+      default: "Item 1\nItem 2"
+      examples:
+        - "Assistance à maîtrise d'ouvrage\nUX / UI design"

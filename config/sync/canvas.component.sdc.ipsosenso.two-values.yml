@@ -1,0 +1,58 @@
+uuid: f0ebe868-1bc4-45ef-83f6-37c8409d89e8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ipsosenso
+active_version: 97ac108a6d3b6418
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        title1:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Le sens de l'innovation"
+          expression: ℹ︎string␟value
+        text1:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Description...
+          expression: ℹ︎string␟value
+        title2:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Le sens de l'engagement"
+          expression: ℹ︎string␟value
+        text2:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Description...
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Two Values'
+id: sdc.ipsosenso.two-values
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:two-values'

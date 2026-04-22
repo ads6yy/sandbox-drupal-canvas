@@ -6,7 +6,10 @@ name: IpsoSenso
 configEntityTypeId: component
 weight: 0
 items:
+  - sdc.ipsosenso.client-logo-grid
+  - sdc.ipsosenso.expertise-card
   - sdc.ipsosenso.hero-carousel
   - sdc.ipsosenso.section-title
   - sdc.ipsosenso.stat
   - sdc.ipsosenso.strate
+  - sdc.ipsosenso.two-values

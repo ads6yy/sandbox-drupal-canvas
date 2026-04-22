@@ -1,19 +1,23 @@
 /**
- * Hero Carousel — rotation auto des slides avec indicateurs cliquables.
+ * Hero Carousel — rotation auto des slides avec indicateurs et flèches.
  */
 
 const initCarousel = (root) => {
+  const container = root.querySelector('.ipsosenso-hero-carousel') || root;
   const slides = root.querySelectorAll('.ipsosenso-hero-carousel__slide');
   const dots = root.querySelectorAll('.ipsosenso-hero-carousel__dot');
-  const autoplay = parseInt(root.dataset.autoplay || '5000', 10);
+  const prevBtn = root.querySelector('[data-carousel-prev]');
+  const nextBtn = root.querySelector('[data-carousel-next]');
+  const autoplay = parseInt(container.dataset.autoplay || '5000', 10);
   if (slides.length === 0) return;
 
   let current = 0;
   let timer = null;
 
   const show = (index) => {
+    const normalized = ((index % slides.length) + slides.length) % slides.length;
     slides.forEach((slide, i) => {
-      if (i === index) {
+      if (i === normalized) {
         slide.classList.add('opacity-100', 'relative');
         slide.classList.remove('opacity-0', 'absolute', 'inset-0');
       } else {
@@ -22,7 +26,7 @@ const initCarousel = (root) => {
       }
     });
     dots.forEach((dot, i) => {
-      if (i === index) {
+      if (i === normalized) {
         dot.classList.add('bg-white', 'w-8');
         dot.classList.remove('bg-transparent', 'w-3');
       } else {
@@ -30,10 +34,11 @@ const initCarousel = (root) => {
         dot.classList.add('bg-transparent', 'w-3');
       }
     });
-    current = index;
+    current = normalized;
   };
 
-  const next = () => show((current + 1) % slides.length);
+  const next = () => show(current + 1);
+  const prev = () => show(current - 1);
 
   const start = () => {
     stop();
@@ -54,6 +59,9 @@ const initCarousel = (root) => {
     });
   });
 
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); start(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); start(); });
+
   root.addEventListener('mouseenter', stop);
   root.addEventListener('mouseleave', start);
 
@@ -61,9 +69,9 @@ const initCarousel = (root) => {
 };
 
 const init = () => {
-  document.querySelectorAll('[data-ipsosenso-carousel]').forEach((el) => {
-    if (el.dataset.ipsosensoCarouselInit) return;
-    el.dataset.ipsosensoCarouselInit = 'true';
+  document.querySelectorAll('.ipsosenso-hero').forEach((el) => {
+    if (el.dataset.ipsosensoHeroInit) return;
+    el.dataset.ipsosensoHeroInit = 'true';
     initCarousel(el);
   });
 };
@@ -74,7 +82,6 @@ if (document.readyState === 'loading') {
   init();
 }
 
-// Re-init si Drupal behaviors
 if (typeof Drupal !== 'undefined') {
   Drupal.behaviors.ipsosensoHeroCarousel = {
     attach: () => init(),

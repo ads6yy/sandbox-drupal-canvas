@@ -1,0 +1,63 @@
+uuid: 8098f438-663b-4b4b-af0f-3069dc515276
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - ipsosenso
+active_version: 68a5757ab3c5e737
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Conception
+          expression: ℹ︎string␟value
+        subtitle:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Pilotage de projets'
+          expression: ℹ︎string␟value
+        icon:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: pencil
+          expression: ℹ︎list_string␟value
+        items:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: |-
+                Assistance à maîtrise d'ouvrage
+                UX / UI design
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Expertise Card'
+id: sdc.ipsosenso.expertise-card
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:expertise-card'

@@ -1,10 +1,5 @@
 /**
  * Tokens de design — déclinaison visuelle du socle Mercury.
- *
- * Palette basée sur la charte graphique de référence :
- * - Primary : bleu nuit (#141e6e) — texte, titres, navbar
- * - Secondary : orange (#f08c05) — CTA, accents
- * - Accent : bleu vif (#0251ab) — liens, hover
  */
 
 :root {
@@ -29,20 +24,25 @@
   --font-mono: "Fira Mono", monospace;
   --radius: 9999px;
 
-  /* Couleurs signature IpsoSenso */
+  /* Couleurs signature */
   --ipso-blue-deep: #141e6e;
   --ipso-blue-bright: #0251ab;
   --ipso-orange: #f08c05;
   --ipso-green: #a5e146;
+  --ipso-green-alt: #61b94d;
   --ipso-yellow: #e1ff80;
   --ipso-green-fresh: #40ff68;
 }
 
-/* Importer Poppins */
+/* Import Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;900&display=swap');
 
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
 /* =============================================================
-   STRATE — composant section avec image de fond et accents
+   STRATE — section pleine largeur avec image de fond
    ============================================================= */
 
 .ipsosenso-strate {
@@ -56,12 +56,16 @@
   background-repeat: no-repeat !important;
 }
 
-/* Variante : image verte façon forêt + overlay vert translucide */
+/* Variante verte : titre principal + intro */
+.ipsosenso-strate--green-photo {
+  background-color: var(--ipso-green-alt);
+}
 .ipsosenso-strate--green-photo .ipsosenso-strate__bg {
   background-image: url('/themes/custom/ipsosenso/assets/0022.png');
+  opacity: 0.4;
 }
 .ipsosenso-strate--green-photo .ipsosenso-strate__overlay {
-  background-color: rgba(97, 185, 77, 0.8);
+  background-color: rgba(97, 185, 77, 0.7);
 }
 .ipsosenso-strate--green-photo,
 .ipsosenso-strate--green-photo h1,
@@ -73,7 +77,7 @@
   color: #ffffff !important;
 }
 
-/* Variante : fond clair avec texture SVG légère */
+/* Variante light-texture : fond clair avec texture SVG */
 .ipsosenso-strate--light-texture {
   background-color: #f8f9fa;
 }
@@ -84,12 +88,12 @@
   width: 90%;
 }
 
-/* Variante : image sombre plein écran (chiffres) */
+/* Variante dark-photo : image sombre plein écran (chiffres) */
 .ipsosenso-strate--dark-photo .ipsosenso-strate__bg {
   background-image: url('/themes/custom/ipsosenso/assets/0011.png');
 }
 .ipsosenso-strate--dark-photo .ipsosenso-strate__overlay {
-  background-color: rgba(20, 30, 110, 0.75);
+  background-color: rgba(20, 30, 110, 0.78);
 }
 .ipsosenso-strate--dark-photo,
 .ipsosenso-strate--dark-photo h1,
@@ -101,7 +105,7 @@
   color: #ffffff !important;
 }
 
-/* Variante : simple fond blanc, pas d'image */
+/* Variante clean : fond blanc */
 .ipsosenso-strate--clean {
   background-color: #ffffff;
 }
@@ -114,11 +118,12 @@
    HERO CAROUSEL
    ============================================================= */
 
-.ipsosenso-hero__bg {
-  background-image: url('/themes/custom/ipsosenso/assets/0022.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.ipsosenso-hero {
+  background-color: #141e6e;
+}
+
+.ipsosenso-hero__video {
+  filter: saturate(1.1);
 }
 
 .ipsosenso-hero-carousel__slide h2 {
@@ -129,28 +134,12 @@
 .ipsosenso-hero-carousel__dot {
   transition: all 0.3s ease;
 }
-
 .ipsosenso-hero-carousel__dot:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* =============================================================
-   Accents et utilitaires
-   ============================================================= */
-
-.ipsosenso-accent-bar {
-  display: block;
-  height: 6px;
-  width: 100px;
-  border-radius: 20px;
-}
-
-.ipsosenso-accent-bar--green { background-color: var(--ipso-green); }
-.ipsosenso-accent-bar--yellow { background-color: var(--ipso-yellow); }
-.ipsosenso-accent-bar--orange { background-color: var(--ipso-orange); }
-
-/* =============================================================
-   Cards clients : mise en forme des logos
+   CLIENT LOGOS
    ============================================================= */
 
 .ipsosenso-client-logo {
@@ -159,15 +148,16 @@
   transition: all 0.3s ease;
   max-height: 60px;
   width: auto;
+  object-fit: contain;
 }
-
-.ipsosenso-client-logo:hover {
+.ipsosenso-client-logo-grid__item:hover .ipsosenso-client-logo {
   filter: grayscale(0%);
   opacity: 1;
+  transform: scale(1.05);
 }
 
 /* =============================================================
-   Animations au scroll
+   Animations
    ============================================================= */
 
 @keyframes ipsosenso-fade-up {
@@ -183,4 +173,15 @@
 
 .ipsosenso-reveal {
   animation: ipsosenso-fade-up 0.8s ease-out both;
+}
+
+/* =============================================================
+   Boutons arrondis façon pilule
+   ============================================================= */
+
+.brassart-button,
+.mercury-button,
+button[class*="mercury"],
+a[class*="mercury"] {
+  border-radius: 9999px !important;
 }
