@@ -1,0 +1,30 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Client Logo
+group: IpsoSenso
+status: stable
+description: "Logo client individuel à placer dans le slot d'un Client Logo Grid."
+props:
+  type: object
+  required:
+    - src
+    - alt
+  properties:
+    src:
+      type: string
+      title: "URL de l'image"
+      description: "Chemin du logo (relatif au webroot, ex. /themes/custom/ipsosenso/assets/airliquide.svg)."
+      default: "/themes/custom/ipsosenso/assets/airliquide.svg"
+      examples:
+        - "/themes/custom/ipsosenso/assets/airliquide.svg"
+    alt:
+      type: string
+      title: "Texte alternatif"
+      default: "Logo client"
+      examples:
+        - "Air Liquide"
+    link:
+      type: string
+      title: "Lien (optionnel)"
+      default: ""
+      examples:
+        - "https://www.airliquide.com"

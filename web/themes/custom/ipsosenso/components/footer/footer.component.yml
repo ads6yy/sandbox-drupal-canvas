@@ -2,7 +2,80 @@
 name: Footer
 group: IpsoSenso
 status: stable
-description: "Pied de page avec adresse, liens rapides et réseaux sociaux."
+description: "Pied de page : adresse, menu dynamique (géré dans /admin/structure/menu), réseaux sociaux."
 props:
   type: object
-  properties: {}
+  required:
+    - menu_name
+  properties:
+    menu_name:
+      type: string
+      title: Menu
+      description: "Machine name du menu Drupal affiché dans la colonne Liens rapides."
+      enum:
+        - ipsosenso_footer
+        - ipsosenso_main
+        - main
+        - footer
+      "meta:enum":
+        ipsosenso_footer: "IpsoSenso — Footer"
+        ipsosenso_main: "IpsoSenso — Menu principal"
+        main: "Main navigation"
+        footer: "Footer"
+      default: "ipsosenso_footer"
+      examples:
+        - "ipsosenso_footer"
+    address_title:
+      type: string
+      title: "Titre colonne 1"
+      default: "Nous trouver"
+      examples:
+        - "Nous trouver"
+    address_line:
+      type: string
+      title: "Adresse"
+      default: "Paris, France"
+      examples:
+        - "Paris, France"
+    contact_label:
+      type: string
+      title: "Label contact"
+      default: "Nous contacter"
+      examples:
+        - "Nous contacter"
+    contact_url:
+      type: string
+      title: "URL contact"
+      default: "#contact"
+      examples:
+        - "#contact"
+    links_title:
+      type: string
+      title: "Titre colonne menu"
+      default: "Liens rapides"
+      examples:
+        - "Liens rapides"
+    social_title:
+      type: string
+      title: "Titre colonne 3"
+      default: "Nous suivre"
+      examples:
+        - "Nous suivre"
+    facebook_url:
+      type: string
+      title: "URL Facebook"
+      default: "#"
+      examples:
+        - "#"
+    linkedin_url:
+      type: string
+      title: "URL LinkedIn"
+      default: "#"
+      examples:
+        - "#"
+    copyright:
+      type: string
+      title: "Texte copyright"
+      default: "Démo Drupal Canvas — Tous droits réservés."
+      examples:
+        - "Démo Drupal Canvas — Tous droits réservés."

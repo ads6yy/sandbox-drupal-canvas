@@ -1,0 +1,6 @@
+services:
+  ipsosenso_menu.twig_extension:
+    class: Drupal\ipsosenso_menu\Twig\IpsosensoMenuExtension
+    arguments: ['@menu.link_tree']
+    tags:
+      - { name: twig.extension }

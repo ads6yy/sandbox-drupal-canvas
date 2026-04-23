@@ -1,29 +1,30 @@
+{% set items = ipsosenso_menu(menu_name|default('ipsosenso_footer')) %}
+
 <footer class="ipsosenso-footer cq-full">
   <div class="ipsosenso-footer__inner">
 
     <div class="ipsosenso-footer__col">
-      <h4>Nous trouver</h4>
-      <p>Paris, France<br>
-      <a href="#contact">Nous contacter</a></p>
+      <h4>{{ address_title|default('Nous trouver') }}</h4>
+      <p>{{ address_line|default('Paris, France') }}<br>
+      <a href="{{ contact_url|default('#') }}">{{ contact_label|default('Nous contacter') }}</a></p>
     </div>
 
     <div class="ipsosenso-footer__col">
-      <h4>Liens rapides</h4>
+      <h4>{{ links_title|default('Liens rapides') }}</h4>
       <p>
-        <a href="#about">Qui sommes-nous ?</a><br>
-        <a href="#expertises">Nos expertises</a><br>
-        <a href="#references">Nos références</a><br>
-        <a href="#chiffres">Nos chiffres</a>
+        {% for item in items %}
+          <a href="{{ item.url }}">{{ item.title }}</a>{% if not loop.last %}<br>{% endif %}
+        {% endfor %}
       </p>
     </div>
 
     <div class="ipsosenso-footer__col">
-      <h4>Nous suivre</h4>
+      <h4>{{ social_title|default('Nous suivre') }}</h4>
       <div class="ipsosenso-footer__social">
-        <a href="#" aria-label="Facebook">
+        <a href="{{ facebook_url|default('#') }}" aria-label="Facebook">
           <img src="/themes/custom/ipsosenso/assets/facebook.svg" alt="Facebook" />
         </a>
-        <a href="#" aria-label="LinkedIn">
+        <a href="{{ linkedin_url|default('#') }}" aria-label="LinkedIn">
           <img src="/themes/custom/ipsosenso/assets/linkedin.svg" alt="LinkedIn" />
         </a>
       </div>
@@ -32,6 +33,6 @@
   </div>
 
   <div class="ipsosenso-footer__bottom">
-    © {{ "now"|date("Y") }} Démo Drupal Canvas — Tous droits réservés.
+    © {{ "now"|date("Y") }} {{ copyright|default('Démo Drupal Canvas — Tous droits réservés.') }}
   </div>
 </footer>

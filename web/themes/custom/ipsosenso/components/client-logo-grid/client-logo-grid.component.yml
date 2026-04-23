@@ -2,7 +2,11 @@
 name: Client Logo Grid
 group: IpsoSenso
 status: stable
-description: "Grille de logos clients avec effet grayscale + hover couleur."
+description: "Grille de logos clients. Ajoutez des composants Client Logo dans le slot pour remplir la grille."
 props:
   type: object
   properties: {}
+slots:
+  logos:
+    title: "Logos"
+    description: "Glissez des composants Client Logo ici."

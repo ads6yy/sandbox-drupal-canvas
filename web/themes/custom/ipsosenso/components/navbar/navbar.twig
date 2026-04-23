@@ -1,10 +1,4 @@
-{% set menu_items = [
-  { 'label': 'Qui sommes-nous ?', 'href': '#about' },
-  { 'label': 'Nos expertises', 'href': '#expertises' },
-  { 'label': 'Nos références', 'href': '#references' },
-  { 'label': 'Nos chiffres', 'href': '#chiffres' },
-  { 'label': 'Contact', 'href': '#contact' },
-] %}
+{% set items = ipsosenso_menu(menu_name|default('ipsosenso_main')) %}
 
 <nav class="ipsosenso-navbar" data-ipsosenso-navbar>
   <div class="ipsosenso-navbar__inner">
@@ -13,15 +7,15 @@
     </a>
 
     <ul class="ipsosenso-navbar__menu">
-      {% for item in menu_items %}
+      {% for item in items %}
         <li>
-          <a class="ipsosenso-navbar__link" href="{{ item.href }}">{{ item.label }}</a>
+          <a class="ipsosenso-navbar__link" href="{{ item.url }}">{{ item.title }}</a>
         </li>
       {% endfor %}
     </ul>
 
-    <a class="ipsosenso-navbar__cta" href="#acces">
-      Accès Client
-    </a>
+    {% if cta_label %}
+      <a class="ipsosenso-navbar__cta" href="{{ cta_url|default('#') }}">{{ cta_label }}</a>
+    {% endif %}
   </div>
 </nav>

@@ -1,5 +1,6 @@
 /**
- * Hero Carousel — rotation auto avec flèches et dots.
+ * Hero Carousel — rotation auto avec flèches et dots générés dynamiquement
+ * depuis le nombre de slides présentes dans le slot.
  */
 
 const inCanvasEditor = () => {
@@ -13,12 +14,27 @@ const inCanvasEditor = () => {
 
 const initCarousel = (root) => {
   const container = root.querySelector('.ipsosenso-hero-carousel') || root;
-  const slides = root.querySelectorAll('.ipsosenso-hero-carousel__slide');
-  const dots = root.querySelectorAll('.ipsosenso-hero-carousel__dot');
+  const slides = Array.from(root.querySelectorAll('.ipsosenso-hero-carousel__slide'));
+  const dotsContainer = root.querySelector('[data-ipsosenso-carousel-dots]');
   const prevBtn = root.querySelector('[data-carousel-prev]');
   const nextBtn = root.querySelector('[data-carousel-next]');
   const autoplay = parseInt(container.dataset.autoplay || '5000', 10);
   if (slides.length === 0) return;
+
+  // Génère les dots en fonction du nombre de slides dans le slot
+  const dots = [];
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'ipsosenso-hero-carousel__dot' + (i === 0 ? ' ipsosenso-hero-carousel__dot--active' : '');
+      btn.dataset.slideTarget = String(i);
+      btn.setAttribute('aria-label', `Slide ${i + 1}`);
+      dotsContainer.appendChild(btn);
+      dots.push(btn);
+    });
+  }
 
   let current = 0;
   let timer = null;
@@ -49,7 +65,8 @@ const initCarousel = (root) => {
 
   const start = () => {
     stop();
-    if (inCanvasEditor()) return; // pas d'autoplay dans l'éditeur
+    if (inCanvasEditor()) return;
+    if (slides.length <= 1) return;
     timer = setInterval(next, autoplay);
   };
   const stop = () => {
@@ -65,6 +82,7 @@ const initCarousel = (root) => {
   root.addEventListener('mouseenter', stop);
   root.addEventListener('mouseleave', start);
 
+  show(0);
   start();
 };
 

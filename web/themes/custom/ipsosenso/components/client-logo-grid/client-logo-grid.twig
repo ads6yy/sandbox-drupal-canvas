@@ -1,21 +1,3 @@
-{% set clients = [
-  { 'name': 'Air Liquide', 'file': 'airliquide.svg' },
-  { 'name': 'Carglass', 'file': 'carglass.png' },
-  { 'name': 'La Rurale', 'file': 'larurale.png' },
-  { 'name': 'Lexis Nexis', 'file': 'lexis.png' },
-  { 'name': 'SCOR', 'file': 'scor.png' },
-  { 'name': 'Smart Prepaid', 'file': 'smartprepaid.png' },
-  { 'name': 'Solly Azar', 'file': 'solly.png' },
-  { 'name': 'Veolia', 'file': 'veolia.png' },
-] %}
-
 <div class="ipsosenso-client-logo-grid">
-  {% for client in clients %}
-    <div class="ipsosenso-client-logo-grid__item">
-      <img src="/themes/custom/ipsosenso/assets/{{ client.file }}"
-           alt="{{ client.name }}"
-           class="ipsosenso-client-logo"
-           loading="lazy" />
-    </div>
-  {% endfor %}
+  {% block logos %}{% endblock %}
 </div>

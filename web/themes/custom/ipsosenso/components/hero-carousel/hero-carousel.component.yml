@@ -2,53 +2,20 @@
 name: Hero Carousel
 group: IpsoSenso
 status: stable
-description: "Hero plein écran avec image de fond et carrousel de blocs de texte animés."
+description: "Hero plein écran avec image de fond et carrousel scalable. Ajoutez des composants Hero Slide dans le slot."
 props:
   type: object
-  required:
-    - slide1_title
-    - slide1_text
-    - slide2_title
-    - slide2_text
-    - slide3_title
-    - slide3_text
   properties:
-    slide1_title:
-      type: string
-      title: Titre slide 1
-      default: "Numérique"
+    autoplay:
+      type: integer
+      title: "Délai autoplay (ms)"
+      default: 5000
       examples:
-        - "Numérique"
-    slide1_text:
-      type: string
-      title: Texte slide 1
-      default: "Accompagnement complet pour la transformation digitale."
-      examples:
-        - "Accompagnement complet pour la transformation digitale."
-    slide2_title:
-      type: string
-      title: Titre slide 2
-      default: "Technologique"
-      examples:
-        - "Technologique"
-    slide2_text:
-      type: string
-      title: Texte slide 2
-      default: "Experts passionnés des technologies modernes."
-      examples:
-        - "Experts passionnés des technologies modernes."
-    slide3_title:
-      type: string
-      title: Titre slide 3
-      default: "Pragmatique"
-      examples:
-        - "Pragmatique"
-    slide3_text:
-      type: string
-      title: Texte slide 3
-      default: "Engagement forfaitaire, approche agile."
-      examples:
-        - "Engagement forfaitaire, approche agile."
+        - 5000
+slots:
+  slides:
+    title: "Slides"
+    description: "Glissez des composants Hero Slide ici."
 libraryOverrides:
   js:
     hero-carousel.js:

@@ -2,10 +2,43 @@
 name: Navbar
 group: IpsoSenso
 status: stable
-description: "Navigation principale fixée en haut, avec logo, liens et CTA. Change de fond au scroll."
+description: "Navigation principale fixée en haut. Les liens sont chargés depuis un menu Drupal (à gérer dans /admin/structure/menu)."
 props:
   type: object
-  properties: {}
+  required:
+    - menu_name
+  properties:
+    menu_name:
+      type: string
+      title: Menu
+      description: "Machine name du menu Drupal à afficher."
+      enum:
+        - ipsosenso_main
+        - ipsosenso_footer
+        - main
+        - footer
+        - account
+      "meta:enum":
+        ipsosenso_main: "IpsoSenso — Menu principal"
+        ipsosenso_footer: "IpsoSenso — Footer"
+        main: "Main navigation"
+        footer: "Footer"
+        account: "User account menu"
+      default: "ipsosenso_main"
+      examples:
+        - "ipsosenso_main"
+    cta_label:
+      type: string
+      title: Libellé CTA
+      default: "Accès Client"
+      examples:
+        - "Accès Client"
+    cta_url:
+      type: string
+      title: URL CTA
+      default: "#acces"
+      examples:
+        - "#acces"
 libraryOverrides:
   js:
     navbar.js:

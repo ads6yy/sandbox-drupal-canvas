@@ -1,0 +1,7 @@
+name: IpsoSenso Menu Helper
+type: module
+description: "Expose une fonction Twig `ipsosenso_menu(menu_name)` pour rendre un menu Drupal dans une SDC, et un `ipsosenso_menu_list()` pour lister les menus disponibles."
+package: IpsoSenso
+core_version_requirement: ^11
+dependencies:
+  - drupal:system

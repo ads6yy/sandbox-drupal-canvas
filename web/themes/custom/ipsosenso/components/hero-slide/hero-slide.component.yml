@@ -1,0 +1,22 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: Hero Slide
+group: IpsoSenso
+status: stable
+description: "Slide individuel pour le Hero Carousel (titre + texte)."
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: "Titre"
+      default: "Numérique"
+      examples:
+        - "Numérique"
+    text:
+      type: string
+      title: "Texte"
+      default: ""
+      examples:
+        - "Accompagnement complet pour la transformation digitale."

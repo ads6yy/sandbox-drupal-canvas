@@ -1,9 +1,3 @@
-{% set slides = [
-  { 'title': slide1_title|default('Numérique'), 'text': slide1_text|default('Accompagnement transformation digitale.') },
-  { 'title': slide2_title|default('Technologique'), 'text': slide2_text|default('Experts Java, PHP, JavaScript, mobile.') },
-  { 'title': slide3_title|default('Pragmatique'), 'text': slide3_text|default('Engagement forfaitaire, approche agile.') },
-] %}
-
 <section class="ipsosenso-hero cq-full">
   <video class="ipsosenso-hero__video" autoplay muted loop playsinline>
     <source src="/themes/custom/ipsosenso/assets/header.mp4" type="video/mp4">
@@ -14,26 +8,13 @@
   <div class="ipsosenso-hero__content">
     <div class="ipsosenso-hero-carousel"
          data-ipsosenso-carousel
-         data-autoplay="5000">
+         data-autoplay="{{ autoplay|default(5000) }}">
 
       <div class="ipsosenso-hero-carousel__slides">
-        {% for slide in slides %}
-          <div class="ipsosenso-hero-carousel__slide {{ loop.first ? 'ipsosenso-hero-carousel__slide--active' : 'ipsosenso-hero-carousel__slide--inactive' }}"
-               data-slide-index="{{ loop.index0 }}">
-            <h2>{{ slide.title }}</h2>
-            <p>{{ slide.text }}</p>
-          </div>
-        {% endfor %}
+        {% block slides %}{% endblock %}
       </div>
 
-      <div class="ipsosenso-hero-carousel__pagination">
-        {% for slide in slides %}
-          <button type="button"
-                  class="ipsosenso-hero-carousel__dot {{ loop.first ? 'ipsosenso-hero-carousel__dot--active' : '' }}"
-                  data-slide-target="{{ loop.index0 }}"
-                  aria-label="Slide {{ loop.index }}"></button>
-        {% endfor %}
-      </div>
+      <div class="ipsosenso-hero-carousel__pagination" data-ipsosenso-carousel-dots></div>
     </div>
 
     <button type="button"

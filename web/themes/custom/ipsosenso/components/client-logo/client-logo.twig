@@ -1,0 +1,9 @@
+<div class="ipsosenso-client-logo-grid__item">
+  {% if link %}
+    <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+      <img src="{{ src }}" alt="{{ alt }}" class="ipsosenso-client-logo" loading="lazy" />
+    </a>
+  {% else %}
+    <img src="{{ src }}" alt="{{ alt }}" class="ipsosenso-client-logo" loading="lazy" />
+  {% endif %}
+</div>
