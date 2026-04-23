@@ -1,10 +1,43 @@
-uuid: c6b4895a-b926-4324-aed0-c65c97734845
+uuid: 40e1671a-7ffd-47b3-9927-c422cdbb0008
 langcode: en
 status: false
 dependencies: {  }
 active_version: 429966cebad152ba
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: local_tasks_block
+        label: Tabs
+        label_display: '0'
+        provider: core
+        primary: true
+        secondary: true
+    fallback_metadata:
+      slot_definitions: null
+  50b12f7d11260a91:
+    settings:
+      default_settings:
+        id: local_tasks_block
+        label: Onglets
+        label_display: '0'
+        provider: core
+        primary: true
+        secondary: true
+    fallback_metadata:
+      slot_definitions: null
+  3272d90a25a0706f:
+    settings:
+      default_settings:
+        id: local_tasks_block
+        label: Tabs
+        label_display: '0'
+        provider: core
+        primary: true
+        secondary: true
+    fallback_metadata:
+      slot_definitions: null
+  429966cebad152ba:
     settings:
       default_settings:
         id: local_tasks_block

@@ -253,26 +253,32 @@ body {
   position: relative;
   width: 100%;
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 380px;
 }
 
+/* Toutes les slides sont absolutes / empilées ; on n'anime QUE l'opacité + translateX.
+   Ça évite le "saut vers le haut" causé par un passage position:relative -> absolute. */
 .ipsosenso-hero-carousel__slide {
-  width: 100%;
-  text-align: center;
-  transition: opacity 0.7s ease-in-out;
-}
-
-.ipsosenso-hero-carousel__slide--inactive {
   position: absolute;
   inset: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .ipsosenso-hero-carousel__slide--active {
-  position: relative;
   opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 2;
 }
 
 .ipsosenso-hero-carousel__slide h2 {
@@ -597,7 +603,22 @@ body {
   right: 0;
   z-index: 50;
   padding: 1.5rem 2rem;
-  transition: background-color 0.3s ease, padding 0.3s ease;
+  transition: background-color 0.3s ease, padding 0.3s ease, top 0.2s ease, left 0.2s ease;
+}
+
+/* Quand Gin admin navigation est affichée sur le frontend :
+   - sa sidebar fixe occupe --sidebar-width à gauche (64 collapsed / 264 expanded)
+   - sa sticky secondary toolbar occupe --gin-toolbar-secondary-height en haut
+   On repousse la navbar site pour qu'elle ne soit pas cachée dessous.
+   Exclu explicitement dans l'iframe de l'éditeur Canvas (pas d'admin UI dedans). */
+html:not(.is-canvas-editor) body.user-logged-in .ipsosenso-navbar {
+  top: var(--gin-toolbar-secondary-height, 0px);
+}
+
+@media (min-width: 61em) {
+  html:not(.is-canvas-editor) body.user-logged-in .ipsosenso-navbar {
+    left: var(--sidebar-width, 64px);
+  }
 }
 .ipsosenso-navbar--scrolled {
   background-color: rgba(48, 53, 56, 0.95);
@@ -768,11 +789,29 @@ body {
 .is-canvas-editor .ipsosenso-strate {
   min-height: auto;
   padding: 40px 0;
+  display: block; /* évite les contraintes flex qui crop les cartes */
 }
 
 .is-canvas-editor .ipsosenso-navbar {
   position: relative;
+  /* Casse le container contraint de l'éditeur Canvas pour occuper toute la largeur du preview */
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   background-color: rgba(48, 53, 56, 0.95);
+}
+
+/* En édition, laisser les cartes prendre leur hauteur naturelle */
+.is-canvas-editor .ipsosenso-expertise-card {
+  height: auto;
+  min-height: 0;
+}
+
+/* Empêcher tout overflow qui cropperait le contenu dans l'iframe */
+.is-canvas-editor .ipsosenso-strate,
+.is-canvas-editor .ipsosenso-strate__content {
+  overflow: visible;
 }
 
 .is-canvas-editor .ipsosenso-hero {

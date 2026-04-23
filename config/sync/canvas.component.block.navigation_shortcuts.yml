@@ -1,4 +1,4 @@
-uuid: 6eee3ad1-70b8-4db0-b9a6-5f1cdc76eba3
+uuid: 5c01dfe9-cf06-482b-b5d6-e23f16ce4669
 langcode: en
 status: false
 dependencies:
@@ -7,6 +7,33 @@ dependencies:
 active_version: 2891751bf7069a8f
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: navigation_shortcuts
+        label: 'Navigation Shortcuts'
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+  8d95435b7c00a0b0:
+    settings:
+      default_settings:
+        id: navigation_shortcuts
+        label: 'Raccourcis de navigation'
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+  254e306b1d8355bb:
+    settings:
+      default_settings:
+        id: navigation_shortcuts
+        label: 'Navigation Shortcuts'
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+  2891751bf7069a8f:
     settings:
       default_settings:
         id: navigation_shortcuts

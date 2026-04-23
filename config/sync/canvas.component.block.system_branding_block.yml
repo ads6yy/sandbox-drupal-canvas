@@ -1,4 +1,4 @@
-uuid: 476c6226-3768-4f3a-81c3-fa44c22c1d84
+uuid: 10d9055e-019f-4119-9ae7-0dd498d1fd0d
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,42 @@ dependencies:
 active_version: b168140fdcaebae5
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: system_branding_block
+        label: 'Site branding'
+        label_display: '0'
+        provider: system
+        use_site_logo: true
+        use_site_name: true
+        use_site_slogan: true
+    fallback_metadata:
+      slot_definitions: null
+  612aee42749ef031:
+    settings:
+      default_settings:
+        id: system_branding_block
+        label: 'Identité du site'
+        label_display: '0'
+        provider: system
+        use_site_logo: true
+        use_site_name: true
+        use_site_slogan: true
+    fallback_metadata:
+      slot_definitions: null
+  15138d91b6ae5339:
+    settings:
+      default_settings:
+        id: system_branding_block
+        label: 'Site branding'
+        label_display: '0'
+        provider: system
+        use_site_logo: true
+        use_site_name: true
+        use_site_slogan: true
+    fallback_metadata:
+      slot_definitions: null
+  b168140fdcaebae5:
     settings:
       default_settings:
         id: system_branding_block

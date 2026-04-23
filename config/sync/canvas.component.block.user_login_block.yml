@@ -1,4 +1,4 @@
-uuid: f2623b50-fed2-4801-910f-b3db00ce7ac3
+uuid: 7d12690d-e4fe-4072-888e-332b0a06a361
 langcode: en
 status: false
 dependencies:
@@ -7,6 +7,33 @@ dependencies:
 active_version: c6887f2904ac0974
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: user_login_block
+        label: 'User login'
+        label_display: '0'
+        provider: user
+    fallback_metadata:
+      slot_definitions: null
+  d72e114a65039b28:
+    settings:
+      default_settings:
+        id: user_login_block
+        label: 'Connexion utilisateur'
+        label_display: '0'
+        provider: user
+    fallback_metadata:
+      slot_definitions: null
+  08dd0ee1c03bc1fd:
+    settings:
+      default_settings:
+        id: user_login_block
+        label: 'User login'
+        label_display: '0'
+        provider: user
+    fallback_metadata:
+      slot_definitions: null
+  c6887f2904ac0974:
     settings:
       default_settings:
         id: user_login_block

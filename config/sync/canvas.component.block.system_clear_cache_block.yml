@@ -1,4 +1,4 @@
-uuid: 54255879-af7c-41f9-8118-dbc2f8f603ba
+uuid: 849d7f60-917d-46e7-a9ea-3d994dc181aa
 langcode: en
 status: false
 dependencies:
@@ -7,6 +7,33 @@ dependencies:
 active_version: 435d13d2208c8fee
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: system_clear_cache_block
+        label: 'Clear cache'
+        label_display: '0'
+        provider: system
+    fallback_metadata:
+      slot_definitions: null
+  7cc3882a684661fa:
+    settings:
+      default_settings:
+        id: system_clear_cache_block
+        label: 'Vider le cache'
+        label_display: '0'
+        provider: system
+    fallback_metadata:
+      slot_definitions: null
+  1100aebfb8d1fbbc:
+    settings:
+      default_settings:
+        id: system_clear_cache_block
+        label: 'Clear cache'
+        label_display: '0'
+        provider: system
+    fallback_metadata:
+      slot_definitions: null
+  435d13d2208c8fee:
     settings:
       default_settings:
         id: system_clear_cache_block

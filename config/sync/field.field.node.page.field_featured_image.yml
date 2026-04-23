@@ -1,4 +1,4 @@
-uuid: 7585316c-af35-4a25-b0c9-a7a059856697
+uuid: e7586fe7-ecc6-499d-bbfd-6a2a84a80eb7
 langcode: en
 status: true
 dependencies:
@@ -15,7 +15,7 @@ bundle: page
 label: 'Featured image'
 description: 'Include an image. This appears as the image in search engine results.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

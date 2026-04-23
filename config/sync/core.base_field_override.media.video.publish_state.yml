@@ -1,0 +1,20 @@
+uuid: 2585942f-a0d5-4765-9ae6-63115350ad59
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.video
+  module:
+    - options
+id: media.video.publish_state
+field_name: publish_state
+entity_type: media
+bundle: video
+label: 'Publish state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

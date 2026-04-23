@@ -1,0 +1,18 @@
+uuid: 70810d49-5a80-4e77-91f2-24a4112cf761
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.unpublish_on
+field_name: unpublish_on
+entity_type: taxonomy_term
+bundle: tags
+label: 'Unpublish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

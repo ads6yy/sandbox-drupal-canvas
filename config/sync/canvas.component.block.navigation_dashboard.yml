@@ -1,4 +1,4 @@
-uuid: b5604994-aaf9-4d10-b69a-6afd1e743015
+uuid: 25780877-d89c-4bd8-be27-4c86e4111236
 langcode: en
 status: false
 dependencies:
@@ -7,6 +7,24 @@ dependencies:
 active_version: b8299fffa95ae6ca
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: navigation_dashboard
+        label: 'Navigation Dashboard'
+        label_display: '0'
+        provider: dashboard
+    fallback_metadata:
+      slot_definitions: null
+  e5e448dc6414d450:
+    settings:
+      default_settings:
+        id: navigation_dashboard
+        label: 'Navigation Dashboard'
+        label_display: '0'
+        provider: dashboard
+    fallback_metadata:
+      slot_definitions: null
+  b8299fffa95ae6ca:
     settings:
       default_settings:
         id: navigation_dashboard

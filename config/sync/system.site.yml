@@ -2,14 +2,14 @@ _core:
   default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
 langcode: en
 uuid: 7fab3d50-e18a-43d9-a7b8-c5bf25bdda47
-name: 'Drupal Canvas Demo'
-mail: admin@example.com
+name: 'My Drupal CMS site'
+mail: asimon@ipsosenso.com
 slogan: ''
 page:
   403: /user/login
   404: ''
-  front: /page/2
+  front: /page/13
 admin_compact_mode: false
 weight_select_max: 100
-default_langcode: en
+default_langcode: fr
 mail_notification: null

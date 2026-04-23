@@ -1,4 +1,4 @@
-uuid: 7a805598-e1ec-45c9-a70c-9d1fc5547fd1
+uuid: c6cc558a-1556-46b5-abf9-132c496375c1
 langcode: en
 status: false
 dependencies:
@@ -7,6 +7,24 @@ dependencies:
 active_version: 0b51e33f5f49694c
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: dashboard_site_status
+        label: 'Site Status'
+        label_display: '0'
+        provider: dashboard
+    fallback_metadata:
+      slot_definitions: null
+  04f0698e45d876f4:
+    settings:
+      default_settings:
+        id: dashboard_site_status
+        label: 'Site Status'
+        label_display: '0'
+        provider: dashboard
+    fallback_metadata:
+      slot_definitions: null
+  0b51e33f5f49694c:
     settings:
       default_settings:
         id: dashboard_site_status

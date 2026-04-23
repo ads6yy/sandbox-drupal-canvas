@@ -1,0 +1,18 @@
+uuid: 75c413db-05e1-471c-9381-cac1520cda51
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: media.remote_video.unpublish_on
+field_name: unpublish_on
+entity_type: media
+bundle: remote_video
+label: 'Unpublish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

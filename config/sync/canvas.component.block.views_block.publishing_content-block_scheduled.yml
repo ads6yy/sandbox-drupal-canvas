@@ -1,4 +1,4 @@
-uuid: 43c4a588-5bf3-4fd3-93b8-d91436bd7dda
+uuid: df29ce22-256d-4dab-9b75-29253b0ecfbc
 langcode: en
 status: false
 dependencies:
@@ -9,6 +9,28 @@ dependencies:
 active_version: 246c02b4b2c6742d
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'views_block:publishing_content-block_scheduled'
+        label: Scheduled
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  907e6eff05e4f3f3:
+    settings:
+      default_settings:
+        id: 'views_block:publishing_content-block_scheduled'
+        label: Scheduled
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  246c02b4b2c6742d:
     settings:
       default_settings:
         id: 'views_block:publishing_content-block_scheduled'

@@ -1,0 +1,20 @@
+uuid: ce9625b6-defe-4d07-96b4-e0b88624a04e
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+  module:
+    - options
+id: media.document.publish_state
+field_name: publish_state
+entity_type: media
+bundle: document
+label: 'Publish state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

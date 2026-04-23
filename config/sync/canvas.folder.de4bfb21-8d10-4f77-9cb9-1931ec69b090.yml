@@ -1,0 +1,11 @@
+uuid: de4bfb21-8d10-4f77-9cb9-1931ec69b090
+langcode: en
+status: true
+dependencies: {  }
+name: 'Lists (Views)'
+configEntityTypeId: component
+weight: 0
+items:
+  - block.views_block.campus_list-block_1
+  - block.views_block.programmes_by_domain-block_1
+  - block.views_block.recent_pages-block_recent_pages

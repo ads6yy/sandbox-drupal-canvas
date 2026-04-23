@@ -1,0 +1,20 @@
+uuid: 2a6caea9-d2c3-43fb-9634-caed6f8f56eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.svg_image
+id: media.svg_image.name
+field_name: name
+entity_type: media
+bundle: svg_image
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

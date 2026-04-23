@@ -1,4 +1,4 @@
-uuid: b780325f-a265-4a46-92c8-22cf397febdd
+uuid: 6f73094f-237f-47c6-b761-7226c32ee30b
 langcode: en
 status: false
 dependencies:
@@ -7,6 +7,33 @@ dependencies:
 active_version: b1e17ec4885768e0
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: navigation_user
+        label: User
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+  365ffa5cc1839855:
+    settings:
+      default_settings:
+        id: navigation_user
+        label: Utilisateur
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+  f84481a87841fd79:
+    settings:
+      default_settings:
+        id: navigation_user
+        label: User
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+  b1e17ec4885768e0:
     settings:
       default_settings:
         id: navigation_user

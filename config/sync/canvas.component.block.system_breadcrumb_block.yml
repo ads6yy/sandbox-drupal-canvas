@@ -1,4 +1,4 @@
-uuid: 620a3047-e807-4eac-a5fb-05e2262915bf
+uuid: 9f7f4dae-e42c-458d-bf86-4e03ed416a04
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,33 @@ dependencies:
 active_version: ad6359c331fc7c45
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: system_breadcrumb_block
+        label: Breadcrumbs
+        label_display: '0'
+        provider: system
+    fallback_metadata:
+      slot_definitions: null
+  4a1d2c35931685f4:
+    settings:
+      default_settings:
+        id: system_breadcrumb_block
+        label: "Fils d'ariane"
+        label_display: '0'
+        provider: system
+    fallback_metadata:
+      slot_definitions: null
+  5c765ac0b278eba4:
+    settings:
+      default_settings:
+        id: system_breadcrumb_block
+        label: Breadcrumbs
+        label_display: '0'
+        provider: system
+    fallback_metadata:
+      slot_definitions: null
+  ad6359c331fc7c45:
     settings:
       default_settings:
         id: system_breadcrumb_block

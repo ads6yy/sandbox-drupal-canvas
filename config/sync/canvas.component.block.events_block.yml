@@ -1,4 +1,4 @@
-uuid: e1e7ec2a-ada0-4671-bcf6-dd5c8ba6e02a
+uuid: ce0fba0d-710f-45a9-9fee-0a5e93a4f148
 langcode: en
 status: false
 dependencies:
@@ -7,6 +7,24 @@ dependencies:
 active_version: 190c703c16aaf9ac
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: events_block
+        label: 'Events Feed'
+        label_display: '0'
+        provider: drupical
+    fallback_metadata:
+      slot_definitions: null
+  56e6814537cb4a7b:
+    settings:
+      default_settings:
+        id: events_block
+        label: 'Events Feed'
+        label_display: '0'
+        provider: drupical
+    fallback_metadata:
+      slot_definitions: null
+  190c703c16aaf9ac:
     settings:
       default_settings:
         id: events_block

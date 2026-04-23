@@ -1,12 +1,12 @@
-uuid: f3d37ec9-e846-4000-a28d-00897257cce5
+uuid: 70cb4b7a-b4b6-41aa-90cc-f3c0f7482652
 langcode: en
 status: false
 dependencies: {  }
 _core:
-  default_config_hash: C1X7L40UH6XCrf5XyB1CE_0VHpcFqzIMbv0IOgAwnhI
+  default_config_hash: 2QmmFXxK6yL17WYSR6MUjCozQWX31lLNqIvni_S5dNk
 id: posthog
 label: Posthog
-description: 'PostHog is an open-source product analytics platform.'
+description: 'Posthog description'
 default: false
 required: false
 opt_out: false

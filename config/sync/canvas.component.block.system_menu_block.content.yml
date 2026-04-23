@@ -1,4 +1,4 @@
-uuid: 5aa8d011-9cb0-47fd-a3a1-ff941ea5e4a0
+uuid: 9428e9bc-45ee-48b2-8267-88c436a2e343
 langcode: en
 status: false
 dependencies:
@@ -6,9 +6,33 @@ dependencies:
     - system.menu.content
   module:
     - system
-active_version: d795a50fdf185e45
+active_version: 4bba99e6b61c0fbe
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'system_menu_block:content'
+        label: Contenu
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+  6d2ff31d4c274651:
+    settings:
+      default_settings:
+        id: 'system_menu_block:content'
+        label: Contenu
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+  08902ada87f08791:
     settings:
       default_settings:
         id: 'system_menu_block:content'
@@ -20,7 +44,19 @@ versioned_properties:
         expand_all_items: false
     fallback_metadata:
       slot_definitions: null
-label: Content
+  d795a50fdf185e45:
+    settings:
+      default_settings:
+        id: 'system_menu_block:content'
+        label: Content
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+label: Contenu
 id: block.system_menu_block.content
 provider: system
 source: block

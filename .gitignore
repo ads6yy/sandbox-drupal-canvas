@@ -50,3 +50,5 @@ $RECYCLE.BIN/
 # Backups locaux de la base de données
 /db-backup*.sql
 /*.sql
+/.editorconfig
+/.gitattributes

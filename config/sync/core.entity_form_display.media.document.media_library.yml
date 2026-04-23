@@ -1,4 +1,4 @@
-uuid: ae7e3f98-0245-43ff-ae55-a61633692fd9
+uuid: 96877f19-e84f-43c8-8470-df94976bc384
 langcode: en
 status: true
 dependencies:
@@ -13,6 +13,13 @@ targetEntityType: media
 bundle: document
 mode: media_library
 content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: -5

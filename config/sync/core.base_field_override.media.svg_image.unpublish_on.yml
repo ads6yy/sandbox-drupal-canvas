@@ -1,0 +1,18 @@
+uuid: ec50310d-dd61-461b-bcd8-9d7cc9ea9c3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.svg_image
+id: media.svg_image.unpublish_on
+field_name: unpublish_on
+entity_type: media
+bundle: svg_image
+label: 'Unpublish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

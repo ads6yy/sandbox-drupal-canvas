@@ -1,10 +1,37 @@
-uuid: 56fdd143-3b88-4d41-a50b-59ac89f16d92
+uuid: a55c295a-19e1-4b96-9095-73ae931418e7
 langcode: en
 status: false
 dependencies: {  }
 active_version: 29753123eb31b8ab
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: local_actions_block
+        label: 'Primary admin actions'
+        label_display: '0'
+        provider: core
+    fallback_metadata:
+      slot_definitions: null
+  1d39bf6583086b9b:
+    settings:
+      default_settings:
+        id: local_actions_block
+        label: "Actions d'administration principales"
+        label_display: '0'
+        provider: core
+    fallback_metadata:
+      slot_definitions: null
+  474d93e6cd156fc9:
+    settings:
+      default_settings:
+        id: local_actions_block
+        label: 'Primary admin actions'
+        label_display: '0'
+        provider: core
+    fallback_metadata:
+      slot_definitions: null
+  29753123eb31b8ab:
     settings:
       default_settings:
         id: local_actions_block

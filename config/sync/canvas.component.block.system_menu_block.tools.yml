@@ -1,4 +1,4 @@
-uuid: f3bd4d09-3e22-4c55-ab13-c5ec3dc566af
+uuid: 79007684-eb82-4a12-b714-9f86414d4cea
 langcode: en
 status: false
 dependencies:
@@ -6,9 +6,33 @@ dependencies:
     - system.menu.tools
   module:
     - system
-active_version: 7a9e0103f91cf338
+active_version: 312d897b3fc316d3
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'system_menu_block:tools'
+        label: Outils
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+  d5be066069c5eaf0:
+    settings:
+      default_settings:
+        id: 'system_menu_block:tools'
+        label: Outils
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+  0d232cd53210971e:
     settings:
       default_settings:
         id: 'system_menu_block:tools'
@@ -20,7 +44,19 @@ versioned_properties:
         expand_all_items: false
     fallback_metadata:
       slot_definitions: null
-label: Tools
+  7a9e0103f91cf338:
+    settings:
+      default_settings:
+        id: 'system_menu_block:tools'
+        label: Tools
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+label: Outils
 id: block.system_menu_block.tools
 provider: system
 source: block

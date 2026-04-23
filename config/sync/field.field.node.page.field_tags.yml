@@ -1,4 +1,4 @@
-uuid: 382bbcbc-b19c-47cc-bcc0-cc6fa1fe9f64
+uuid: 8dc1aa57-6e7c-4719-9cf1-fb240aaad26c
 langcode: en
 status: true
 dependencies:
@@ -15,7 +15,7 @@ bundle: page
 label: Tags
 description: 'Include tags for relevant topics.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

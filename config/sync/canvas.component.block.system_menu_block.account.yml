@@ -1,4 +1,4 @@
-uuid: 94847781-20cd-44b3-9ff7-c19db61391d0
+uuid: 182bb5ba-53ee-4443-a881-07c267080755
 langcode: en
 status: false
 dependencies:
@@ -6,9 +6,33 @@ dependencies:
     - system.menu.account
   module:
     - system
-active_version: 4b3fb59b8eadb12d
+active_version: fd85f6c671db0aea
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'system_menu_block:account'
+        label: "Menu du compte de l'utilisateur"
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+  3649336dfd157daf:
+    settings:
+      default_settings:
+        id: 'system_menu_block:account'
+        label: "Menu du compte de l'utilisateur"
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+  a7ba38fb6eb3c0ef:
     settings:
       default_settings:
         id: 'system_menu_block:account'
@@ -20,7 +44,19 @@ versioned_properties:
         expand_all_items: false
     fallback_metadata:
       slot_definitions: null
-label: 'User account menu'
+  4b3fb59b8eadb12d:
+    settings:
+      default_settings:
+        id: 'system_menu_block:account'
+        label: 'User account menu'
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+label: "Menu du compte de l'utilisateur"
 id: block.system_menu_block.account
 provider: system
 source: block

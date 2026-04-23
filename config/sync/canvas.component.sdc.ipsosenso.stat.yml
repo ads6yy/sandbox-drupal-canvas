@@ -1,5 +1,5 @@
-uuid: d3465af6-9804-4ce3-bcb0-6dda388969d1
-langcode: en
+uuid: 7a8c9028-deb4-4e42-b8b1-e76a7035c57a
+langcode: fr
 status: true
 dependencies:
   module:
@@ -51,50 +51,6 @@ versioned_properties:
           default_value:
             -
               value: inverted
-          expression: ℹ︎list_string␟value
-    fallback_metadata:
-      slot_definitions: {  }
-  2ce0342b236e57e6:
-    settings:
-      prop_field_definitions:
-        value:
-          required: true
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value:
-            -
-              value: '65'
-          expression: ℹ︎string␟value
-        suffix:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value:
-            -
-              value: '%'
-          expression: ℹ︎string␟value
-        label:
-          required: true
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value:
-            -
-              value: Collaborateurs
-          expression: ℹ︎string␟value
-        color:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value: null
           expression: ℹ︎list_string␟value
     fallback_metadata:
       slot_definitions: {  }

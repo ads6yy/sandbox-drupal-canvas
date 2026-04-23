@@ -1,4 +1,4 @@
-uuid: 17237471-ea4d-4f5d-a008-42e88069ff09
+uuid: 6967e777-960a-41ec-897a-973fa6c7fc1a
 langcode: en
 status: true
 dependencies:
@@ -16,7 +16,7 @@ bundle: svg_image
 label: Image
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

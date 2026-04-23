@@ -1,4 +1,4 @@
-uuid: d9070a5e-c685-4ac4-8a36-ae82f0636b1d
+uuid: 2b656f23-6ee6-4dfa-9805-28ec8753ebd6
 langcode: en
 status: false
 dependencies:
@@ -7,6 +7,48 @@ dependencies:
 active_version: e37816eb455058be
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: 'project_browser_block:drupalorg_jsonapi'
+        label: 'Contrib modules'
+        label_display: '0'
+        provider: project_browser
+        paginate: true
+        page_sizes: '12, 24, 36, 48'
+        sort_options: null
+        default_sort: null
+        filters: null
+    fallback_metadata:
+      slot_definitions: null
+  b8eae853709bec4f:
+    settings:
+      default_settings:
+        id: 'project_browser_block:drupalorg_jsonapi'
+        label: 'Modules contribués'
+        label_display: '0'
+        provider: project_browser
+        paginate: true
+        page_sizes: '12, 24, 36, 48'
+        sort_options: null
+        default_sort: null
+        filters: null
+    fallback_metadata:
+      slot_definitions: null
+  bde67e085a49785f:
+    settings:
+      default_settings:
+        id: 'project_browser_block:drupalorg_jsonapi'
+        label: 'Contrib modules'
+        label_display: '0'
+        provider: project_browser
+        paginate: true
+        page_sizes: '12, 24, 36, 48'
+        sort_options: null
+        default_sort: null
+        filters: null
+    fallback_metadata:
+      slot_definitions: null
+  e37816eb455058be:
     settings:
       default_settings:
         id: 'project_browser_block:drupalorg_jsonapi'

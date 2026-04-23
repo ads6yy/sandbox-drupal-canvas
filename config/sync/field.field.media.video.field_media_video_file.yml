@@ -1,4 +1,4 @@
-uuid: 771367ab-f344-43a6-be50-a592e2b14c6e
+uuid: 419a219f-10ab-49a3-8151-3ba8fbccb358
 langcode: en
 status: true
 dependencies:
@@ -16,7 +16,7 @@ bundle: video
 label: 'Video file'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
