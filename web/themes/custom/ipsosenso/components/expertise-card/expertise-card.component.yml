@@ -38,3 +38,10 @@ props:
       default: "Item 1\nItem 2"
       examples:
         - "Assistance à maîtrise d'ouvrage\nUX / UI design"
+    link:
+      type: string
+      title: "Lien (optionnel)"
+      description: "URL vers la page détail. Si renseigné, toute la carte devient cliquable."
+      default: ""
+      examples:
+        - "/node/14"

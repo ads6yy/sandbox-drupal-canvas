@@ -4,7 +4,10 @@
   'network': '<circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v4m-7 8L9 13m10 6l-4-6M8 13h8"/>',
 } %}
 
-<div class="ipsosenso-expertise-card">
+{% set tag = link ? 'a' : 'div' %}
+{% set extra = link ? ' href="' ~ link ~ '" class="ipsosenso-expertise-card ipsosenso-expertise-card--linked"' : ' class="ipsosenso-expertise-card"' %}
+
+<{{ tag }}{{ extra|raw }}>
   <div class="ipsosenso-expertise-card__icon">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       {{ icons[icon|default('pencil')]|raw }}
@@ -25,4 +28,4 @@
       {% endif %}
     {% endfor %}
   </ul>
-</div>
+</{{ tag }}>

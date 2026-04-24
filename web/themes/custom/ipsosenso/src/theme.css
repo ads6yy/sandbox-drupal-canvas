@@ -85,6 +85,17 @@ body {
   background-color: var(--ipso-green-alt);
   color: #fff;
 }
+
+/* Gabarit expertise : le champ `field_services` est un string_long avec
+   des sauts de ligne ; on les rend visibles côté CSS. Ciblé à la strate verte
+   pour ne pas affecter le reste. */
+.ipsosenso-strate--green-photo .ipsosenso-strate__content > div[class*="[&_h2]"] {
+  white-space: pre-line;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 2.2;
+}
 .ipsosenso-strate--green-photo .ipsosenso-strate__bg {
   background-image: url('/themes/custom/ipsosenso/assets/0022.png');
 }
@@ -397,6 +408,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
   text-align: center;
   margin-top: 55px;
   transition: transform 0.3s ease;
@@ -405,6 +417,14 @@ body {
 
 .ipsosenso-expertise-card:hover {
   transform: translateY(-8px);
+}
+
+a.ipsosenso-expertise-card--linked {
+  cursor: pointer;
+  color: inherit;
+}
+a.ipsosenso-expertise-card--linked:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .ipsosenso-expertise-card__icon {

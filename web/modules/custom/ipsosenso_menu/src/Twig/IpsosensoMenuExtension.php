@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\ipsosenso_menu\Twig;
 
+use Drupal\Core\Entity\EntityRepositoryInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Twig\Extension\AbstractExtension;
@@ -14,7 +16,11 @@ use Twig\TwigFunction;
  */
 final class IpsosensoMenuExtension extends AbstractExtension {
 
-  public function __construct(private readonly MenuLinkTreeInterface $menuLinkTree) {}
+  public function __construct(
+    private readonly MenuLinkTreeInterface $menuLinkTree,
+    private readonly EntityTypeManagerInterface $entityTypeManager,
+    private readonly EntityRepositoryInterface $entityRepository,
+  ) {}
 
   public function getFunctions(): array {
     return [
@@ -50,8 +56,21 @@ final class IpsosensoMenuExtension extends AbstractExtension {
         continue;
       }
       $link = $element->link;
+      $title = (string) $link->getTitle();
+
+      // Pour les menu_link_content, récupérer la traduction de l'entité
+      // correspondant à la langue courante (sinon on retombe sur la langue source).
+      $meta = $link->getMetaData();
+      if (!empty($meta['entity_id'])) {
+        $mlc = $this->entityTypeManager->getStorage('menu_link_content')->load($meta['entity_id']);
+        if ($mlc) {
+          $translated = $this->entityRepository->getTranslationFromContext($mlc);
+          $title = (string) $translated->label();
+        }
+      }
+
       $items[] = [
-        'title' => (string) $link->getTitle(),
+        'title' => $title,
         'url' => $link->getUrlObject()->toString(),
         'active' => FALSE,
       ];

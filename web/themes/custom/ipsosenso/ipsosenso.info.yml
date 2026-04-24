@@ -3,7 +3,7 @@ type: theme
 "base theme": mercury
 libraries:
   - ipsosenso/tokens
-logo: logo.svg
+logo: logo.png
 description: "Thème de démonstration Drupal Canvas — déclinaison du socle Mercury avec l'identité visuelle IpsoSenso."
 core_version_requirement: ^11.3
 regions:
