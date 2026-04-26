@@ -2,7 +2,7 @@
 
 Ce dépôt est une **implémentation de référence** pour un site Drupal CMS basé sur le système de composants **Canvas / Mercury**, avec l'identité visuelle fictive **IpsoSenso**.
 
-Il sert de base de code et de bac à sable pour expérimenter les Single Directory Components (SDC), la suite AI de Drupal, et les bonnes pratiques Composer/DDEV.
+Il sert de base de code et de bac à sable pour expérimenter les Single Directory Components (SDC), la suite AI de Drupal, et les bonnes pratiques Composer/Docker.
 
 ![Drupal](https://img.shields.io/badge/drupal-%230678BE.svg?style=for-the-badge&logo=drupal&logoColor=white)
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
@@ -13,11 +13,10 @@ Il sert de base de code et de bac à sable pour expérimenter les Single Directo
 ## 🛠️ Tech Stack
 
 * **CMS :** Drupal CMS 2.1.1 / Drupal Core 11.3+
-* **Langage :** PHP 8.x
+* **Langage :** PHP 8.4
 * **Base de données :** MariaDB
 * **Serveur web :** Nginx
-* **Environnement local :** DDEV
-* **Environnement containerisé :** Docker Compose
+* **Environnement :** Docker Compose
 * **Dépendances :** Composer
 * **Templating :** Twig + SDC (Single Directory Components)
 * **Thème admin :** Gin
@@ -26,56 +25,46 @@ Il sert de base de code et de bac à sable pour expérimenter les Single Directo
 
 ### Prérequis
 
-* [DDEV](https://ddev.com/get-started/) installé sur votre machine
+* [Docker](https://docs.docker.com/get-docker/) et [Docker Compose](https://docs.docker.com/compose/install/) installés sur votre machine
 
-### Démarrage local
-
-```bash
-# Démarrer l'environnement DDEV
-ddev start
-
-# Installer les dépendances PHP
-ddev composer install
-
-# Importer la configuration depuis le dépôt
-ddev drush config:import --yes
-
-# Appliquer les mises à jour de base de données
-ddev drush update:db --yes
-
-# Vider le cache
-ddev drush cache:rebuild
-
-# Ouvrir le site dans le navigateur
-ddev launch
-```
-
-### Commandes Drush utiles
-
-```bash
-# Obtenir un lien de connexion admin
-ddev drush user:login
-
-# Exporter la config après modifications dans l'interface
-ddev drush config:export --yes
-
-# Activer un nouveau module
-ddev composer require drupal/<module>
-ddev drush pm:enable --yes <module>
-ddev drush cache:rebuild
-```
-
-### Déploiement Docker (production-like)
+### Démarrage
 
 ```bash
 # Copier et remplir le fichier d'environnement
 cp deploy/.env.example deploy/.env
 
-# Lancer la stack (MariaDB + PHP-FPM + Nginx)
-cd deploy && docker-compose up -d
+# Construire et lancer la stack (MariaDB + PHP-FPM + Nginx)
+cd deploy && docker compose up -d --build
+
+# Installer les dépendances PHP
+docker compose exec php composer install
+
+# Importer la configuration depuis le dépôt
+docker compose exec php vendor/bin/drush config:import --yes
+
+# Appliquer les mises à jour de base de données
+docker compose exec php vendor/bin/drush update:db --yes
+
+# Vider le cache
+docker compose exec php vendor/bin/drush cache:rebuild
 ```
 
 Le site est accessible sur `http://localhost:8702`.
+
+### Commandes Drush utiles
+
+```bash
+# Obtenir un lien de connexion admin
+docker compose exec php vendor/bin/drush user:login
+
+# Exporter la config après modifications dans l'interface
+docker compose exec php vendor/bin/drush config:export --yes
+
+# Activer un nouveau module
+docker compose exec php composer require drupal/<module>
+docker compose exec php vendor/bin/drush pm:enable --yes <module>
+docker compose exec php vendor/bin/drush cache:rebuild
+```
 
 ## 📁 Structure du projet
 
@@ -118,7 +107,6 @@ Le site est accessible sur `http://localhost:8702`.
 
 * [Drupal CMS User Guide](https://project.pages.drupalcode.org/drupal_cms/)
 * [Drupal User Guide](https://www.drupal.org/docs/user_guide/en/index.html)
-* [Documentation DDEV](https://docs.ddev.com/en/stable/)
 * [Single Directory Components (SDC)](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components)
 * [Canvas module](https://www.drupal.org/project/canvas)
 * [Mercury theme](https://www.drupal.org/project/mercury)
