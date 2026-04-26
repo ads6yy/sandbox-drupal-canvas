@@ -1,36 +1,143 @@
-# Drupal CMS
+# Sandbox Drupal Canvas
 
-Drupal CMS is a fast-moving open source product that enables site builders to easily create new Drupal sites and extend them with smart defaults, all using their browser.
+Ce dépôt est une **implémentation de référence** pour un site Drupal CMS basé sur le système de composants **Canvas / Mercury**, avec l'identité visuelle fictive **IpsoSenso**.
 
-## Getting started
+Il sert de base de code et de bac à sable pour expérimenter les Single Directory Components (SDC), la suite AI de Drupal, et les bonnes pratiques Composer/DDEV.
 
-If you want to use [DDEV](https://ddev.com) to run Drupal CMS locally, follow these instructions:
+![Drupal](https://img.shields.io/badge/drupal-%230678BE.svg?style=for-the-badge&logo=drupal&logoColor=white)
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![MariaDB](https://img.shields.io/badge/mariadb-%23003545.svg?style=for-the-badge&logo=mariadb&logoColor=white)
+![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
 
-1. Install DDEV following the [documentation](https://ddev.com/get-started/)
-2. Open the command line and `cd` to the root directory of this project
-3. Run `ddev launch`
+## 🛠️ Tech Stack
 
-Drupal CMS has the same system requirements as Drupal core, so you can use your preferred setup to run it locally. [See the Drupal User Guide for more information](https://www.drupal.org/docs/user_guide/en/installation-chapter.html) on how to set up Drupal.
+* **CMS :** Drupal CMS 2.1.1 / Drupal Core 11.3+
+* **Langage :** PHP 8.x
+* **Base de données :** MariaDB
+* **Serveur web :** Nginx
+* **Environnement local :** DDEV
+* **Environnement containerisé :** Docker Compose
+* **Dépendances :** Composer
+* **Templating :** Twig + SDC (Single Directory Components)
+* **Thème admin :** Gin
 
-### Installation options
+## 🚀 Quick Start
 
-The Drupal CMS installer offers a list of features preconfigured with smart defaults. You will be able to customize whatever you choose, and add additional features, once you are logged in.
+### Prérequis
 
-After the installer is complete, you will land on the dashboard.
+* [DDEV](https://ddev.com/get-started/) installé sur votre machine
 
-## Documentation
+### Démarrage local
+
+```bash
+# Démarrer l'environnement DDEV
+ddev start
+
+# Installer les dépendances PHP
+ddev composer install
+
+# Importer la configuration depuis le dépôt
+ddev drush config:import --yes
+
+# Appliquer les mises à jour de base de données
+ddev drush update:db --yes
+
+# Vider le cache
+ddev drush cache:rebuild
+
+# Ouvrir le site dans le navigateur
+ddev launch
+```
+
+### Commandes Drush utiles
+
+```bash
+# Obtenir un lien de connexion admin
+ddev drush user:login
+
+# Exporter la config après modifications dans l'interface
+ddev drush config:export --yes
+
+# Activer un nouveau module
+ddev composer require drupal/<module>
+ddev drush pm:enable --yes <module>
+ddev drush cache:rebuild
+```
+
+### Déploiement Docker (production-like)
+
+```bash
+# Copier et remplir le fichier d'environnement
+cp deploy/.env.example deploy/.env
+
+# Lancer la stack (MariaDB + PHP-FPM + Nginx)
+cd deploy && docker-compose up -d
+```
+
+Le site est accessible sur `http://localhost:8702`.
+
+## 📁 Structure du projet
+
+```
+├── composer.json            # Dépendances Drupal (60+ modules contrib)
+├── config/sync/             # Export de la configuration Drupal (YAML)
+├── deploy/                  # Stack Docker Compose
+│   ├── docker-compose.yml
+│   ├── db/                  # Config MariaDB
+│   ├── nginx/               # Config Nginx
+│   └── php/                 # Dockerfile + php.ini
+└── web/
+    ├── modules/custom/
+    │   └── ipsosenso_menu/  # Fonction Twig ipsosenso_menu() pour les SDC
+    └── themes/custom/
+        └── ipsosenso/       # Thème custom (base : Mercury / Canvas)
+            ├── components/  # 11 composants SDC
+            ├── assets/      # Images, SVG, vidéo
+            ├── src/         # theme.css (design tokens)
+            └── lib/         # detect-editor.js
+```
+
+### Composants SDC (`web/themes/custom/ipsosenso/components/`)
+
+| Composant | Description |
+|:----------|:------------|
+| `navbar` | Navigation principale fixée en haut, alimentée par un menu Drupal |
+| `hero-carousel` | Hero plein écran avec carrousel de slides autoplay |
+| `hero-slide` | Slide individuelle pour le hero carousel |
+| `strate` | Conteneur de section avec fond et layout flexibles |
+| `section-title` | Titre de section avec sous-titre optionnel |
+| `expertise-card` | Carte de présentation d'une expertise |
+| `stat` | Mise en valeur d'un chiffre clé |
+| `two-values` | Bloc de comparaison en deux colonnes |
+| `client-logo` | Logo client avec lien optionnel |
+| `client-logo-grid` | Grille de logos clients |
+| `footer` | Pied de page avec menus, adresse et réseaux sociaux |
+
+## 📚 Documentation
 
 * [Drupal CMS User Guide](https://project.pages.drupalcode.org/drupal_cms/)
-* Learn more about managing a Drupal-based application in the [Drupal User Guide](https://www.drupal.org/docs/user_guide/en/index.html).
+* [Drupal User Guide](https://www.drupal.org/docs/user_guide/en/index.html)
+* [Documentation DDEV](https://docs.ddev.com/en/stable/)
+* [Single Directory Components (SDC)](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components)
+* [Canvas module](https://www.drupal.org/project/canvas)
+* [Mercury theme](https://www.drupal.org/project/mercury)
 
-## Contributing & Support
+## 📅 Roadmap
 
-[Report issues in the queue](https://drupal.org/node/add/project-issue/drupal_cms), providing as much detail as you can. You can also join the #drupal-cms-support channel in the [Drupal Slack community](https://www.drupal.org/slack).
+| Fonctionnalité | Description | Statut |
+|:---------------|:------------|:-------|
+| **Thème IpsoSenso** | Déclinaison Mercury avec identité visuelle IpsoSenso | ✅ Fait |
+| **Composants SDC** | 11 composants Canvas (navbar, hero, footer, stat…) | ✅ Fait |
+| **Module ipsosenso_menu** | Fonction Twig pour rendre des menus Drupal dans les SDC | ✅ Fait |
+| **Stack Docker** | Docker Compose MariaDB + PHP-FPM + Nginx | ✅ Fait |
+| **Suite AI** | Intégration drupal/ai avec providers Anthropic & OpenAI | ✅ Fait |
+| **Tests** | Tests fonctionnels et unitaires | ⏳ À faire |
+| **CI/CD** | Pipeline GitHub Actions (lint, deploy) | ⏳ À faire |
+| **Multilingue** | Configuration canvas_multilingual | ⏳ À faire |
 
-Drupal CMS is developed in [a separate repository on Drupal.org](https://www.drupal.org/project/drupal_cms). See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+## 📄 Licence
 
-## License
+Ce projet est sous licence [GNU General Public License v2.0 ou ultérieure](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
 
-Drupal CMS and all derivative works are licensed under the [GNU General Public License, version 2 or later](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
-
-Learn about the [Drupal trademark and logo policy here](https://www.drupal.com/trademark).
+Drupal et son logo sont des marques déposées. Voir la [politique des marques Drupal](https://www.drupal.com/trademark).
