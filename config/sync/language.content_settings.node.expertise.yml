@@ -1,0 +1,16 @@
+uuid: 0f1f34a7-c995-41c2-aed3-773eef189d29
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.expertise
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.expertise
+target_entity_type_id: node
+target_bundle: expertise
+default_langcode: site_default
+language_alterable: false

@@ -2,11 +2,119 @@ uuid: 9a9e9324-24e1-437e-9744-1734b2261503
 langcode: fr
 status: true
 dependencies:
+  module:
+    - options
   theme:
     - ipsosenso
-active_version: 8fe3be948e0194e1
+active_version: 6cbff1fc7a7332c9
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        menu_name:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: ipsosenso_footer
+          expression: ℹ︎list_string␟value
+        address_title:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Nous trouver'
+          expression: ℹ︎string␟value
+        address_line:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Paris, France'
+          expression: ℹ︎string␟value
+        contact_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Nous contacter'
+          expression: ℹ︎string␟value
+        contact_url:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '#contact'
+          expression: ℹ︎string␟value
+        links_title:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Liens rapides'
+          expression: ℹ︎string␟value
+        social_title:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Nous suivre'
+          expression: ℹ︎string␟value
+        facebook_url:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '#'
+          expression: ℹ︎string␟value
+        linkedin_url:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '#'
+          expression: ℹ︎string␟value
+        copyright:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Démo Drupal Canvas — Tous droits réservés.'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  8fe3be948e0194e1:
     settings:
       prop_field_definitions: {  }
     fallback_metadata:

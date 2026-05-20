@@ -1,0 +1,8 @@
+uuid: 75cc1f6c-8e65-4c3e-85c4-681c9f85913f
+langcode: fr
+status: true
+dependencies: {  }
+id: ipsosenso_main
+label: 'IpsoSenso — Menu principal'
+description: 'Menu utilisé par la navbar.'
+locked: false

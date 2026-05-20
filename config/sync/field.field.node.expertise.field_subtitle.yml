@@ -1,0 +1,19 @@
+uuid: f204f4f3-0e14-43b5-8dd6-df538b412b1b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.expertise
+id: node.expertise.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: expertise
+label: Sous-titre
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

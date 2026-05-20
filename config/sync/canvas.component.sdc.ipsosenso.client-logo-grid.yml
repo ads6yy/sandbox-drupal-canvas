@@ -4,9 +4,17 @@ status: true
 dependencies:
   theme:
     - ipsosenso
-active_version: 8fe3be948e0194e1
+active_version: dc95ad6dbe2cd5fb
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        logos:
+          title: Logos
+          description: 'Glissez des composants Client Logo ici.'
+  8fe3be948e0194e1:
     settings:
       prop_field_definitions: {  }
     fallback_metadata:

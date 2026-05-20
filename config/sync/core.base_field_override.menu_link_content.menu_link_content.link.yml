@@ -1,18 +1,21 @@
-uuid: 93ebb5e3-e6fb-47be-aa4f-b3637f0244e0
-langcode: en
+uuid: 458c397c-3b9a-45bb-a3e7-c3d42c143766
+langcode: fr
 status: true
 dependencies:
   module:
+    - link
     - menu_link_content
-id: menu_link_content.menu_link_content.title
-field_name: title
+id: menu_link_content.menu_link_content.link
+field_name: link
 entity_type: menu_link_content
 bundle: menu_link_content
-label: 'Menu link title'
+label: Link
 description: ''
 required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  title: 0
+  link_type: 17
+field_type: link

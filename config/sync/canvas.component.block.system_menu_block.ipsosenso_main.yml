@@ -1,0 +1,27 @@
+uuid: a4130924-ba07-44f6-9c2c-c9436dfb8ac1
+langcode: fr
+status: false
+dependencies:
+  config:
+    - system.menu.ipsosenso_main
+  module:
+    - system
+active_version: 08397db83d130d0d
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'system_menu_block:ipsosenso_main'
+        label: 'IpsoSenso — Menu principal'
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+label: 'IpsoSenso — Menu principal'
+id: block.system_menu_block.ipsosenso_main
+provider: system
+source: block
+source_local_id: 'system_menu_block:ipsosenso_main'

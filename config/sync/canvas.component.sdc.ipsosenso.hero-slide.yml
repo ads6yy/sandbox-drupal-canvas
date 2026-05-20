@@ -1,0 +1,38 @@
+uuid: da793328-6304-4e99-acbf-9c1e007b2160
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - ipsosenso
+active_version: afa8390175f89bc5
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Numérique
+          expression: ℹ︎string␟value
+        text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Accompagnement complet pour la transformation digitale.'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Hero Slide'
+id: sdc.ipsosenso.hero-slide
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:hero-slide'

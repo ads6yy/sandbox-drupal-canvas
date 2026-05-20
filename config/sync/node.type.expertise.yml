@@ -1,0 +1,11 @@
+uuid: a51fb7a0-e7d9-4bb8-88e5-3f7ca6bfe673
+langcode: fr
+status: true
+dependencies: {  }
+name: Expertise
+type: expertise
+description: "Fiche détaillant un domaine d'expertise IpsoSenso."
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

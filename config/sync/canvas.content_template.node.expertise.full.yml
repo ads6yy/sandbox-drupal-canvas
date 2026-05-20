@@ -1,0 +1,102 @@
+uuid: bf814468-1671-4117-b7ed-c331e504eb54
+langcode: fr
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.ipsosenso.footer
+    - canvas.component.sdc.ipsosenso.navbar
+    - canvas.component.sdc.ipsosenso.section-title
+    - canvas.component.sdc.ipsosenso.strate
+    - canvas.component.sdc.mercury.text
+    - core.entity_view_mode.node.full
+    - field.field.node.expertise.field_body
+    - field.field.node.expertise.field_services
+    - field.field.node.expertise.field_subtitle
+    - node.type.expertise
+  module:
+    - node
+    - options
+id: node.expertise.full
+content_entity_type_id: node
+content_entity_type_bundle: expertise
+content_entity_type_view_mode: full
+component_tree:
+  0:
+    uuid: 74682a9f-26ba-4ac5-8c68-29025312709f
+    component_id: sdc.ipsosenso.navbar
+    component_version: 9e23b5d6fe1f5161
+    inputs: '{"menu_name":"ipsosenso_main","cta_label":"Acc\u00e8s Client","cta_url":"#"}'
+    label: Navbar
+  1:
+    uuid: 47a2b678-fe6f-47d9-b812-756da3d8c707
+    component_id: sdc.ipsosenso.strate
+    component_version: 50b3641a57af0ac6
+    inputs: '{"variant":"dark-photo","padding":"xlarge"}'
+    label: Hero
+  '1:strate_content:0':
+    parent_uuid: 47a2b678-fe6f-47d9-b812-756da3d8c707
+    slot: strate_content
+    uuid: 528d93cf-69e6-45ec-8a4a-485baba92fe2
+    component_id: sdc.ipsosenso.section-title
+    component_version: 0723c6ed3e61e34d
+    inputs: '{"title":{"sourceType":"entity-field","expression":"\u2139\ufe0e\u241centity:node:expertise\u241dtitle\u241e\u241fvalue"},"level":1,"color":"inverted","accent":"yellow","align":"center"}'
+    label: 'Titre hero (dynamique)'
+  '1:strate_content:1':
+    parent_uuid: 47a2b678-fe6f-47d9-b812-756da3d8c707
+    slot: strate_content
+    uuid: b51c55ea-c3b4-4760-86fe-6f279e62bcad
+    component_id: sdc.mercury.text
+    component_version: 16c79c28a4108f9b
+    inputs: '{"text":{"sourceType":"entity-field","expression":"\u2139\ufe0e\u241centity:node:expertise\u241dfield_subtitle\u241e\u241fvalue"},"text_size":"text-xl","text_color":"inverted"}'
+    label: 'Sous-titre (dynamique)'
+  2:
+    uuid: b7723c68-542a-4d47-b124-c6f7565374a3
+    component_id: sdc.ipsosenso.strate
+    component_version: 50b3641a57af0ac6
+    inputs: '{"variant":"light-texture","padding":"large"}'
+    label: 'Notre approche'
+  '2:strate_content:0':
+    parent_uuid: b7723c68-542a-4d47-b124-c6f7565374a3
+    slot: strate_content
+    uuid: 532dfc32-fd6e-4e13-804b-7616ee6a6f39
+    component_id: sdc.ipsosenso.section-title
+    component_version: 0723c6ed3e61e34d
+    inputs: '{"title":"Notre approche","level":2,"color":"primary","accent":"green","align":"center"}'
+    label: 'Titre bloc approche'
+  '2:strate_content:1':
+    parent_uuid: b7723c68-542a-4d47-b124-c6f7565374a3
+    slot: strate_content
+    uuid: cf2c15e3-e08e-4612-b0b9-9bfd51898cd6
+    component_id: sdc.mercury.text
+    component_version: 16c79c28a4108f9b
+    inputs: '{"text":{"sourceType":"entity-field","expression":"ℹ︎␜entity:node:expertise␝field_body␞␟processed"},"text_size":"text-lg","text_color":"default"}'
+    label: 'Corps (dynamique)'
+  3:
+    uuid: 2312c7f2-40f8-442c-b1e9-00e4b376daa9
+    component_id: sdc.ipsosenso.strate
+    component_version: 50b3641a57af0ac6
+    inputs: '{"variant":"green-photo","padding":"xlarge"}'
+    label: Services
+  '3:strate_content:0':
+    parent_uuid: 2312c7f2-40f8-442c-b1e9-00e4b376daa9
+    slot: strate_content
+    uuid: ac752ab4-65fe-4a8a-9d0f-2b4d0b1a855d
+    component_id: sdc.ipsosenso.section-title
+    component_version: 0723c6ed3e61e34d
+    inputs: '{"title":"Nos services","level":2,"color":"inverted","accent":"yellow","align":"center"}'
+    label: 'Titre services'
+  '3:strate_content:1':
+    parent_uuid: 2312c7f2-40f8-442c-b1e9-00e4b376daa9
+    slot: strate_content
+    uuid: 1f5a51a2-c3ee-4b40-958e-1d066b8d94a8
+    component_id: sdc.mercury.text
+    component_version: 16c79c28a4108f9b
+    inputs: '{"text":{"sourceType":"entity-field","expression":"\u2139\ufe0e\u241centity:node:expertise\u241dfield_services\u241e\u241fvalue"},"text_size":"text-lg","text_color":"inverted"}'
+    label: 'Liste services (dynamique)'
+  4:
+    uuid: d80bc5e0-266a-4670-b06e-6c32ae8f2cb2
+    component_id: sdc.ipsosenso.footer
+    component_version: 6cbff1fc7a7332c9
+    inputs: '{"menu_name":"ipsosenso_footer","address_title":"Nous trouver","address_line":"Paris, France","contact_label":"Nous contacter","contact_url":"#contact","links_title":"Liens rapides","social_title":"Nous suivre","facebook_url":"#","linkedin_url":"#","copyright":"D\u00e9mo Drupal Canvas \u2014 Tous droits r\u00e9serv\u00e9s."}'
+    label: Footer
+exposed_slots: {  }

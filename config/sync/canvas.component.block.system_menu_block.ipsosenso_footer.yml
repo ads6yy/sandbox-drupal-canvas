@@ -1,0 +1,27 @@
+uuid: 1d4eee4a-e370-490c-b1b3-392a30f16b1c
+langcode: fr
+status: false
+dependencies:
+  config:
+    - system.menu.ipsosenso_footer
+  module:
+    - system
+active_version: 734c0d3b0089dd1c
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'system_menu_block:ipsosenso_footer'
+        label: 'IpsoSenso — Footer'
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+label: 'IpsoSenso — Footer'
+id: block.system_menu_block.ipsosenso_footer
+provider: system
+source: block
+source_local_id: 'system_menu_block:ipsosenso_footer'

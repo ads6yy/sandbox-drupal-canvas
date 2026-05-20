@@ -49,6 +49,7 @@ module:
   honeypot: 0
   image: 0
   inline_form_errors: 0
+  ipsosenso_menu: 0
   jquery_ui: 0
   jquery_ui_resizable: 0
   klaro: 0

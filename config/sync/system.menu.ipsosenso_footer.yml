@@ -1,0 +1,8 @@
+uuid: be5a4ec0-7f53-4d64-8317-7cfeed677f74
+langcode: fr
+status: true
+dependencies: {  }
+id: ipsosenso_footer
+label: 'IpsoSenso — Footer'
+description: 'Menu utilisé par la colonne Liens rapides du footer.'
+locked: false

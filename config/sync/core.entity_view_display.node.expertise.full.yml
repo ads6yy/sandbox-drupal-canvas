@@ -1,0 +1,33 @@
+uuid: 473784f8-d9f4-4afd-bced-1716b5061f1b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.expertise.field_body
+    - field.field.node.expertise.field_hero_image
+    - field.field.node.expertise.field_icon
+    - field.field.node.expertise.field_services
+    - field.field.node.expertise.field_subtitle
+    - field.field.node.expertise.field_summary
+    - node.type.expertise
+  module:
+    - user
+id: node.expertise.full
+targetEntityType: node
+bundle: expertise
+mode: full
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_body: true
+  field_hero_image: true
+  field_icon: true
+  field_services: true
+  field_subtitle: true
+  field_summary: true
+  langcode: true

@@ -1,0 +1,48 @@
+uuid: 0427594f-f224-4bb0-af55-aa85fb14903b
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - ipsosenso
+active_version: fb5fbbb68cb4dd2d
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        src:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: /themes/custom/ipsosenso/assets/airliquide.svg
+          expression: ℹ︎string␟value
+        alt:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Air Liquide'
+          expression: ℹ︎string␟value
+        link:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'https://www.airliquide.com'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Client Logo'
+id: sdc.ipsosenso.client-logo
+provider: ipsosenso
+source: sdc
+source_local_id: 'ipsosenso:client-logo'

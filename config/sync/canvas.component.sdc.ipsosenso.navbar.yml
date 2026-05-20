@@ -2,11 +2,85 @@ uuid: e5c4883f-5042-4c6f-be26-5c22991807e8
 langcode: fr
 status: true
 dependencies:
+  module:
+    - options
   theme:
     - ipsosenso
-active_version: 8fe3be948e0194e1
+active_version: 9e23b5d6fe1f5161
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        menu_name:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: ipsosenso_main
+          expression: ℹ︎list_string␟value
+        cta_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Accès Client'
+          expression: ℹ︎string␟value
+        cta_url:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '#acces'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  9a4c0b05975ea7c5:
+    settings:
+      prop_field_definitions:
+        menu_name:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: ipsosenso_main
+          expression: ℹ︎list_string␟value
+        cta_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Accès Client'
+          expression: ℹ︎string␟value
+        cta_url:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '#acces'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  8fe3be948e0194e1:
     settings:
       prop_field_definitions: {  }
     fallback_metadata:
